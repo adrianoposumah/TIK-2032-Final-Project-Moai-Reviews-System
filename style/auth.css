@@ -33,13 +33,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin:0 20%;
+  margin: 0 20%;
 }
 
 .container {
   text-align: center;
   background-color: var(--color-bg);
-  width: 400px; 
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  padding: 30px;
 }
 
 .logo img {
@@ -52,9 +55,8 @@ body {
   gap: 15px;
 }
 
-a{
+a {
   text-decoration: none;
-
 }
 
 .form-group {
@@ -71,7 +73,7 @@ a{
 
 .signup-form input {
   padding: 12px;
-  font-size:16px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   background-color: var(--color-light);
@@ -86,7 +88,7 @@ a{
   color: var(--color-bg);
   font-weight: bold;
   cursor: pointer;
-  font-size:17px;
+  font-size: 17px;
   margin-top: 10px;
   padding: 12px 0px;
 }
@@ -113,8 +115,7 @@ footer {
   color: var(--color-secondary);
 }
 
-
-.signup-form a{
+.signup-form a {
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -123,4 +124,3 @@ footer {
   font-weight: bold;
   cursor: pointer;
 }
-
