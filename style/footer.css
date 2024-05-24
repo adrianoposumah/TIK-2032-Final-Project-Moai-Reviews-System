@@ -1,0 +1,99 @@
+footer {
+  background-color: #24252a;
+  color: #f3f3f3;
+  padding: 20px 0;
+  border-top: 1px solid #f3f3f3; /* Garis atas */
+  border-bottom: 1px solid #f3f3f3; /* Garis bawah */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 5%;
+  padding: 0 20px;
+}
+
+.logo {
+  flex-basis: 60%; /* Mengatur lebar logo 60% */
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.footer-content {
+  flex-basis: 30%; /* Mengatur lebar konten footer 40% */
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  text-align: left; /* Pastikan text-align kiri */
+}
+
+h4 {
+  margin: 0; /* Menghapus margin bawaan */
+  text-align: left; /* Rata kiri */
+}
+
+.columns {
+  margin-top: 10px;
+  display: grid;
+  font-size: 10px;
+  color: #eecd3d;
+  grid-template-columns: repeat(3, 1fr); /* Membagi nav menjadi tiga kolom */
+  gap: 20px; /* Jarak antara kolom */
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  margin-bottom: 5px; /* Jarak antara setiap kategori */
+}
+
+.column ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#about-us {
+  background-color: #24252a;
+  color: #f3f3f3;
+  border-bottom: 1px solid #f3f3f3; /* Garis bawah */
+}
+
+#about-us .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  flex-basis: 60%;
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.about {
+  flex-basis: 40%;
+  font-size: 10px;
+  font-weight: bold;
+  color: #eecd3d;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.about i {
+  font-size: 10px;
+  font-weight: bold;
+  color: #f3f3f3;
+  margin-left: 10px;
+}
