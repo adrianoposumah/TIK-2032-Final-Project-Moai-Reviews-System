@@ -1,0 +1,94 @@
+:root {
+  /* COLOR Variable */
+  --color-bg: #24252a;
+  --color-light: #f3f3f3;
+  --color-dark: #383838;
+  --color-primary: #eecd3d;
+  --color-primary-hover: #cbaf31;
+  --color-secondary: #d9d9d9;
+
+  --color-success: #28a745;
+  --color-warning: #dc3545;
+  --color-danger: #ffc107;
+
+  /* FONT Variable */
+  --Font-Poppins: "Poppins", sans-serif;
+  --Font-Montserrat: "Montserrat", sans-serif;
+
+  /* FONT Weight Variable */
+  --font-reguler: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+}
+
+body{
+  background-color: var(--color-bg) ;
+}
+
+h2{
+  color: var(--color-light);
+  font-weight: var(--font-bold);
+  font-family: var(--Font-Montserrat);
+  margin: 0 10%;
+  border: 1px solid #fff;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* justify-content: flex-end; */
+  margin: 0 10%;
+  border: 1px solid red;
+  gap: 20px;
+}
+
+.movie-card {
+  /* width: 15%; */
+  /* margin: -10px 10px ; */
+  /* border: 1px solid #ddd; */
+  /* padding: 10px; */
+  box-sizing: border-box;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-card h3,
+.movie-card p{
+  color: var(--color-light);;
+  text-align: center;
+  font-family: var(--Font-Montserrat);
+}
+.movie-card h3 {
+  font-weight: var(--font-medium);
+  margin-top: 5px;
+  font-size: 16px;
+  /* border: 1px solid green; */
+
+}
+
+.movie-card p{
+  font-weight: var(--font-semibold);
+  margin-top: -15px;
+  font-size: 11px;
+  /* border: 1px solid red; */
+}
+
+@media screen and (max-width: 768px) {
+  .movie-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Optional spacing between cards  */
+    margin: 0 2%;
+  }
+
+  .movie-card {
+    height: 100%;
+  }
+}
