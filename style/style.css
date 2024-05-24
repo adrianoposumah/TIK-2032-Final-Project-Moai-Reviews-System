@@ -56,9 +56,9 @@ header {
   margin: 0 10%;
 }
 
-/* .navbar-logo img {
-  height: 100px;
-} */
+.navbar-logo {
+  cursor: pointer;
+}
 
 .navbar-right {
   display: flex;
