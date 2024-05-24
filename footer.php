@@ -5,9 +5,9 @@
         </div>
         <div class="categories">
           <h4>Categories</h4>
-          <div class="columns">         
+          <div class="columns">
             <ul>
-              <?php foreach($categories as $category) : ?>
+              <?php foreach ($categories as $category) : ?>
                 <li><a href="#"><?= $category['name'] ?></a></li>
               <?php endforeach; ?>
             </ul>

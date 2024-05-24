@@ -45,6 +45,9 @@ body {
   padding: 30px;
 }
 
+.logo {
+  cursor:pointer;
+}
 .logo img {
   width: 125px;
 }
