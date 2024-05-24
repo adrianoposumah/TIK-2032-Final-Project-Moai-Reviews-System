@@ -37,6 +37,7 @@ body {
 .sidebar {
   width: 250px;
   padding: 20px 0;
+  border-right: 1px solid #fff;
 }
 
 .sidebar .logo {

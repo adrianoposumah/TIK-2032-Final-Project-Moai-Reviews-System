@@ -1,0 +1,120 @@
+:root {
+  /* COLOR Variable */
+  --color-bg: #24252a;
+  --color-light: #f3f3f3;
+  --color-dark: #383838;
+  --color-primary: #eecd3d;
+  --color-secondary: #d9d9d9;
+
+  --color-success: ##28a745;
+  --color-warning: ##dc3545;
+  --color-danger: ##ffc107;
+
+  /* FONT Variable */
+  --Font-Poppins: "Poppins", sans-serif;
+  --Font-Montserrat: "Montserrat", sans-serif;
+
+  /* FONT Weight Variable */
+  --font-reguler: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+}
+
+/* Sucess Style */
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg);
+  font-family: var(--Font-Poppins);
+}
+
+.success-container {
+  text-align: center;
+  margin-top: 160px;
+}
+
+.success-box {
+  /* display: inline-block; */
+  padding: 60px;
+  border-radius: 16px;
+  background-color: var(--color-primary);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+}
+
+.success-checkmark {
+  width: 104px;
+  height: 104px;
+  stroke-width: 3;
+  stroke: #4caf50;
+  fill: none;
+  animation: draw 0.6s ease-in-out forwards;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2px;
+  stroke-miterlimit: 10;
+  stroke: #4caf50;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 96;
+  stroke-dashoffset: 96;
+  animation: stroke-check 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.success-message {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--color-dark);
+  font-weight: var(--font-bold);
+}
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stroke-check {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.back-btn {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.back-btn a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+  color: var(--color-dark);
+  font-weight: var(--font-semibold);
+}
+
+.back-btn a:hover {
+  background-color: var(--color-primary);
+}

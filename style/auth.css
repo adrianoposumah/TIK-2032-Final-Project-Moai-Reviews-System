@@ -79,6 +79,7 @@ a {
   background-color: var(--color-light);
   color: var(--color-bg);
   height: 15px;
+  font-family: var(--Font-Poppins);
 }
 
 .signup-form button {
@@ -123,4 +124,12 @@ footer {
   color: var(--color-bg);
   font-weight: bold;
   cursor: pointer;
+}
+
+.container .signup-form .error-msg {
+  padding: 7px 0;
+  display: block;
+  background: var(--color-warning);
+  color: var(--color-light);
+  border-radius: 5px;
 }
