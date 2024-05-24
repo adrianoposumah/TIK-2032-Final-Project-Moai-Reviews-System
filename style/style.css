@@ -221,9 +221,22 @@ header {
 .mySlides {
   display: none;
 }
+
+.film-banner {
+  box-shadow: 1px -73px 140px -36px rgba(33, 33, 33, 0.75) inset;
+  -webkit-box-shadow: 1px -73px 140px -36px rgba(33, 33, 33, 0.75) inset;
+  -moz-box-shadow: 1px -73px 140px -36px rgba(33, 33, 33, 0.75) inset;
+}
 .mySlides img {
   vertical-align: middle;
-  height: 500px;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  box-shadow: 0px -102px 98px 0px rgba(255, 0, 0, 0.58) inset !important;
+  -webkit-box-shadow: 0px -102px 98px 0px rgba(255, 0, 0, 0.58) inset !important;
+  -moz-box-shadow: 0px -102px 98px 0px rgba(255, 0, 0, 0.58) inset !important;
+  z-index: 10;
+  position: relative;
 }
 /* Slideshow container */
 .carousel-container {
@@ -240,7 +253,30 @@ header {
   position: absolute;
   bottom: 8px;
   width: 100%;
-  text-align: center;
+  margin-left: 10%;
+  z-index: 11;
+}
+
+.film-information .film-title {
+  font-size: 36px;
+  font-weight: var(--font-semibold);
+}
+
+.film-information .film-prop {
+  font-size: 15px;
+  display: flex;
+  font-weight: var(--font-bold);
+}
+
+.film-year::after,
+.film-genre::after {
+  content: " _ ";
+}
+
+.film-synopsis {
+  max-width: 290px;
+  overflow-wrap: break-word;
+  font-weight: var(--font-reguler);
 }
 
 /* Fading animation */
@@ -285,6 +321,52 @@ header {
   .text {
     font-size: 14px;
   }
+}
+
+.search-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: -25px;
+}
+
+.search-field form {
+  display: flex;
+  align-items: center;
+}
+
+.search-field input {
+  width: 600px;
+  height: 50px;
+  border-radius: 0 0 0 8px;
+  padding: 10px;
+  margin-right: -1px;
+  border: none;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.search-field input::placeholder {
+  color: var(--color-light);
+}
+
+.search-field input:focus {
+  background-color: #333; /* Ganti warna latar saat input difokuskan */
+  outline: none; /* Hilangkan outline */
+}
+
+.search-field button {
+  width: 50px;
+  height: 50px;
+  border-radius: 0 0 8px 0;
+  background-color: var(--color-dark);
+  cursor: pointer;
+  border: none;
+}
+
+.search-field button i {
+  color: var(--color-light);
 }
 
 /* Footer */
