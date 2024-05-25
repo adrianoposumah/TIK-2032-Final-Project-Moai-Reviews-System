@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "020804apip",  "moaireviewsystem");
+$conn = mysqli_connect("localhost", "root", "",  "moaireviewsystem");
 if (mysqli_connect_errno()) {
   echo "Koneksi database gagal : " . mysqli_connect_error();
 }

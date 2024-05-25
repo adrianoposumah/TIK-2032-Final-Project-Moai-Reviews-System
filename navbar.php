@@ -18,13 +18,13 @@ $categories = query("SELECT * FROM `genres` WHERE id <> '00N';");
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
 
   <!-- <link rel="stylesheet" href="./style/style.css" /> -->
-  <link rel="stylesheet" href="style.css" />
-
+  <link rel="stylesheet" href="style/style.css" />
+  <!-- <script src="./script/script.js"></script> -->
   <script src="https://kit.fontawesome.com/bfff52efaa.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <div class="navbar">
       <div class="navbar-logo" onclick="openPage('./index.php')">
         <img src="./image/logo.svg" alt="Moaireviews logo" />
@@ -51,4 +51,37 @@ $categories = query("SELECT * FROM `genres` WHERE id <> '00N';");
         </div>
       </div>
     </div>
+  </header> -->
+  <header>
+    <nav class="navbar">
+      <!-- <div class="navbar-logo" onclick="openPage('./index.php')"> -->
+      <div class="navbar-logo" onclick="openPage('./index.php')">
+        <img src="./image/logo.svg" alt="Moaireviews logo" />
+      </div>
+      <div class="navbar-right">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="./index.php" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="./categories.php" class="nav-link">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a href="./signup.php" class="nav-link">Sign up</a>
+          </li>
+          <li class="nav-item signin"><a href="./login.php" class="nav-link">Sign in</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="search-box">
+          <form>
+            <input type="text" name="search" id="srch" placeholder="Search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </nav>
   </header>
