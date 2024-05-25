@@ -33,6 +33,10 @@ body {
   background: var(--color-bg);
 }
 
+h1 {
+  border: none;
+}
+
 .error-container {
   text-align: center;
 }
