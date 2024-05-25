@@ -26,7 +26,8 @@
         </div>
       </div>
     </footer>
-    </body>
-    <script src="script/script.js"></script>
 
-    </html>
+  </body>
+  <!-- <script src="script.js"></script> -->
+  <script src="./script/script.js"></script>
+</html>

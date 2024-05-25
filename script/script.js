@@ -51,9 +51,9 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 2000);
+  setTimeout(showSlides, 10000);
 }
 
-function openPage(pageUrl){
-  window.location.href=pageUrl
+function openPage(pageUrl) {
+  window.location.href = pageUrl;
 }

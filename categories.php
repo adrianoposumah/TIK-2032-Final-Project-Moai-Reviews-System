@@ -1,6 +1,6 @@
 <?php include 'navbar.php'; ?>
     <section>
-      <div class="category">
+      <div class="category section-margin">
         <h2>Categories</h2>
         <div class="list-category">         
           <ul>
