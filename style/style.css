@@ -40,6 +40,9 @@ h1 {
   color: var(--color-light);
   font-weight: var(--font-extrabold);
   font-size: 30px;
+  margin: 30px 0;
+  border-left: 4px solid var(--color-primary);
+  padding-left: 10px;
 }
 
 @media only screen and (max-width: 769px) {
@@ -69,6 +72,15 @@ header {
   background-color: var(--color-bg);
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
+  margin-top: -20px;
+}
+
+.section-margin {
+  margin: 0 10%;
+}
+
+section {
+  margin: 20px 0;
 }
 
 .navbar {
@@ -259,6 +271,7 @@ header {
   -moz-box-shadow: 0px -102px 98px 0px rgba(255, 0, 0, 0.58) inset !important;
   z-index: 10;
   position: relative;
+  margin-top: -20px;
 }
 /* Slideshow container */
 .carousel-container {
@@ -275,7 +288,6 @@ header {
   position: absolute;
   bottom: 8px;
   /* width: 100%; */
-  margin: 0 10%;
   z-index: 11;
 }
 
@@ -290,10 +302,10 @@ header {
   font-weight: var(--font-bold);
 }
 
-.film-year::after,
+/* .film-year::after,
 .film-genre::after {
   content: " _ ";
-}
+} */
 
 .film-synopsis {
   max-width: 290px;
@@ -345,7 +357,9 @@ header {
   }
 }
 
-.search-field {
+/* search field */
+
+/* .search-field {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -356,14 +370,15 @@ header {
 .search-field form {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 800px; 
 }
 
 .search-field input {
-  width: 600px;
+  flex: 1;
   height: 50px;
   border-radius: 0 0 0 8px;
   padding: 10px;
-  margin-right: -1px;
   border: none;
   background-color: var(--color-dark);
   color: var(--color-light);
@@ -374,8 +389,8 @@ header {
 }
 
 .search-field input:focus {
-  background-color: #333; /* Ganti warna latar saat input difokuskan */
-  outline: none; /* Hilangkan outline */
+  background-color: #333; 
+  outline: none; 
 }
 
 .search-field button {
@@ -391,27 +406,41 @@ header {
   color: var(--color-light);
 }
 
-/* Feature Section */
-.featured {
-  margin: 0 10%;
+@media (max-width: 768px) {
+  .search-field input {
+    width: 50%; 
 }
+
+@media (max-width: 480px) {
+  .search-field input {
+    width: 40%; 
+  }
+
+  .search-field button {
+    width: 40px; 
+    height: 40px;
+  }
+} */
+
+/* Feature Section */
 .movie-container {
   display: grid;
   gap: 20px;
-  padding: 20px;
+  /* padding: 20px; */
+  /* justify-content: space-between; */
 }
 
 .movie-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
-  text-align: center;
 }
 
 .movie-card img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  max-height: 310px;
+  object-fit: cover; /* Ensures the image covers the area */
+  border-radius: 10px;
 }
 
 .movie-card h3,
@@ -424,6 +453,9 @@ header {
   font-weight: var(--font-medium);
   margin-top: 5px;
   font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   /* border: 1px solid green; */
 }
 
@@ -450,15 +482,12 @@ header {
   .movie-container {
     grid-template-columns: repeat(3, 1fr);
   }
-  .movie-card img {
-    max-width: 100%;
-    height: 130px;
-  }
 }
 /* Footer */
 footer {
   color: #f3f3f3;
   border-top: 1px solid #f3f3f3; /* Garis atas */
+  margin-top: 40px;
 }
 
 .footer-content {
