@@ -1,45 +1,88 @@
-<?php
-require './config/connection.php';
+<?php include 'navbar_admin.php'; ?>
 
-session_start();
-
-if (!isset($_SESSION['admin_name'])) {
-    header('HTTP/1.1 401 Unauthorized');
-    header('Location: 401.html');
-    exit;
-} 
-if ($_SESSION['role'] !== 'admin') {
-    header('HTTP/1.1 403 Forbidden');
-    header('Location: 403.html');
-    exit; 
-}
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moai Reviews</title>
-
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Style -->
-    <link rel="stylesheet" href="/style/style.css" />
-
-    <!-- Icon -->
-    <script src="https://kit.fontawesome.com/bfff52efaa.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <h1>hi admin <?php echo $_SESSION['admin_name'] ?> </h1>
-    <a href="./logout.php">Logout</a>
-  </body>
-  <script src="/script/script.js"></script>
-</html>
+<section>
+  <div class="carousel-container">
+  <?php foreach($banners as $banner) : ?>
+    <div class="mySlides fade">
+      <div class="film-banner">
+        <img src="./image/movie-banner/Money-Heist-banner.jpg" style="width: 100%" />
+      </div>
+      <div class="film-information section-margin">
+        <div class="film-title"><?= $banner['name'] ?></div>
+        <div class="film-prop">
+          <div class="film-year"><?= $banner['release_year'] ?> |</div>
+          <!-- <div class="film-genre"><?= $banner['genre_name'] ?></div> -->
+          <div class="film-type"><?= $banner['type'] ?></div>
+        </div>
+        <div class="film-synopsis"><?= $banner['synopsis'] ?></div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+  </div>
+</section>
+<!-- <div class="search-field">
+  <form>
+    <input type="text" name="search" id="srch" placeholder="Search" />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div> -->
+<section class="section-margin">
+  <div class="featured">
+    <h1>FEATURED</h1>
+    <div class="movie-container">
+      <?php foreach($features as $feature) : ?>
+      <div class="movie-card">
+        <img src="image/movie-poster/<?= $feature['poster'] ?>" alt="<?= $feature['name'] ?>" />
+        <h3><?= $feature['name'] ?></h3>
+        <p><?= $feature['release_year'] ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+<section class="section-margin">
+  <div class="coming-soon">
+    <h1>COMING SOON</h1>
+    <div class="movie-container">
+      <?php foreach($comingsoons as $comingsoon) : ?>
+      <div class="movie-card">
+        <img src="image/movie-poster/<?= $comingsoon['poster'] ?>" alt="<?= $comingsoon['name'] ?>" />
+        <h3><?= $comingsoon['name'] ?></h3>
+        <p><?= $comingsoon['release_year'] ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="section-margin">
+  <div class="anime">
+    <h1>ANIME</h1>
+    <div class="movie-container">
+      <?php foreach($animes as $anime) : ?>
+      <div class="movie-card">
+        <img src="image/movie-poster/<?= $anime['poster'] ?>" alt="<?= $anime['name'] ?>" />
+        <h3><?= $anime['name'] ?></h3>
+        <p><?= $anime['release_year'] ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="section-margin">
+  <div class="anime">
+    <h1>TV-SERIES</h1>
+    <div class="movie-container">
+      <?php foreach($tvseries as $tvseri) : ?>
+      <div class="movie-card">
+        <img src="image/movie-poster/<?= $tvseri['poster'] ?>" alt="<?= $tvseri['name'] ?>" />
+        <h3><?= $tvseri['name'] ?></h3>
+        <p><?= $tvseri['release_year'] ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  </div>
+</section>
+<?php include 'footer.php'; ?>

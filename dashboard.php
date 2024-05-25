@@ -2,7 +2,7 @@
     <div class="container">
       <main class="main-content">
         <header>
-          <h1>User Management</h1>
+          <h1>Dashboard</h1>
           <div class="nav-right">
             <a href="./home_admin.php">Home</a>
             <a href="/categories.html">Categories</a>
@@ -13,33 +13,7 @@
         </header>
         <!-- Content -->
         <section>
-         <div class="search-box">
-  <form id="search-form">
-    <input type="text" name="search" id="srch" placeholder="Search" />
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-</div>
-<!-- <div class="film-container" id="film-container">
-  <?php foreach( $films as $film ) : ?>
-  <div class="film-card" data-title="<?= strtolower($film['name']) ?>">
-    <div class="img-poster">
-      <img src="./image/movie-poster/<?= $film['poster'] ?>" alt="" />
-    </div>
-    <div class="poster-action">
-      <h4 class="film-title"><?= $film['name'] ?></h4>
-      <div class="action-btn">
-        <div class="edit">
-          <i class="fa-solid fa-pen-to-square"></i>
-        </div>
-        <div class="delete">
-          <i class="fa-solid fa-trash"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php endforeach; ?>
-</div> -->
-
+        
 
         </section>
       </main>

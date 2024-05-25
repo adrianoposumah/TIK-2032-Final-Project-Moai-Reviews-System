@@ -2,6 +2,23 @@
 require './config/connection.php';
 require './config/functions.php';
 
+session_start();
+
+if (!isset($_SESSION['admin_name'])) {
+    header('HTTP/1.1 401 Unauthorized');
+    header('Location: 401.html');
+    exit;
+} 
+if ($_SESSION['role'] !== 'admin') {
+    header('HTTP/1.1 403 Forbidden');
+    header('Location: 403.html');
+    exit; 
+}
+
+$user_id = $_SESSION['user_id'];
+
+$user_info = query("SELECT * FROM users WHERE id = $user_id");
+
 $categories = query("SELECT * FROM `genres` WHERE id <> '00N';");
 $features = query("SELECT * FROM `films` WHERE `status` = 'air' ORDER BY release_year DESC, release_date DESC LIMIT 18;");
 
@@ -72,15 +89,17 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
       <div class="navbar-right">
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="./index.php" class="nav-link">Home</a>
+            <a href="./home_admin.php" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
             <a href="./categories.php" class="nav-link">Categories</a>
           </li>
           <li class="nav-item">
-            <a href="./signup.php" class="nav-link">Sign up</a>
+            <a href="./dashboard.php" class="nav-link"><?php echo $user_info[0]['fullname']; ?></a>
           </li>
-          <li class="nav-item signin"><a href="./login.php" class="nav-link">Sign in</a></li>
+          <li class="nav-item">
+            <!-- <img height="40px" style="border-radius: 50%;" src="./image/user-picture/<?php echo $user_info[0]['photo']; ?>" alt="> -->
+          </li>
         </ul>
         <div class="hamburger">
           <span class="bar"></span>

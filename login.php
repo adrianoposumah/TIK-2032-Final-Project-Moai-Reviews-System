@@ -18,10 +18,12 @@ if (isset($_POST['signin'])) {
     if ($result->num_rows > 0) {
       $row = $result->fetch_assoc();
       if (password_verify($password, $row['password'])) {
+        $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_name'] = $row['fullname'];
         $_SESSION['admin_name'] = $row['fullname'];
         $_SESSION['role'] = $row['role'];
 
+       
         if ($_SESSION['role'] == 'admin') {
           header('Location: home_admin.php');
           exit;

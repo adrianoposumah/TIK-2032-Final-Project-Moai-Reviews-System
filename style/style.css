@@ -173,24 +173,29 @@ section {
 /* header{
   background-color: #262626;
 } */
-.navbar{
-  min-height:70px;
+.navbar {
+  min-height: 105px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
+  /* padding: 0 24px; */
 }
 
-.navbar-logo{
+/* .navbar-logo{
   margin: 0 10%;
-}
-.navbar-logo img{
+} */
+.navbar-logo img {
   cursor: pointer;
-
 }
-@media (max-width:768px){
-  .navbar-logo img{
-    width:150px;
+@media (max-width: 768px) {
+  .navbar-logo img {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 669px) {
+  .navbar-logo img {
+    width: 80px;
   }
 }
 .navbar-right {
@@ -199,43 +204,42 @@ section {
   /* justify-content: flex-end; */
   /* flex-grow:1; */
 }
-.navbar .nav-menu li{
+.navbar .nav-menu li {
   list-style: none;
 }
 
-.navbar .nav-menu .nav-item a{
+.navbar .nav-menu .nav-item a {
   text-decoration: none;
   color: var(--color-light);
   padding: 10px 10px;
   font-size: 16px;
 }
-@media(max-width:1100px){
-  .navbar .nav-menu .nav-item a{
-    font-size:1.1vw;
+@media (max-width: 1100px) {
+  .navbar .nav-menu .nav-item a {
+    font-size: 1.1vw;
   }
 }
 .navbar .nav-menu .nav-item a:hover {
   color: var(--color-primary-hover);
 }
 
-
-.nav-menu{
+.nav-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
 }
 
-.nav-link{
+.nav-link {
   transition: 0.7s ease;
 }
 
-.hamburger{
-  display:none;
+.hamburger {
+  display: none;
   cursor: pointer;
 }
 
-.bar{
+.bar {
   display: block;
   width: 25px;
   height: 3px;
@@ -294,25 +298,25 @@ section {
   color: var(--color-light);
 }
 
-@media(max-width:960px){
+@media (max-width: 960px) {
   .search-box button {
     position: absolute;
   }
-  .hamburger{
+  .hamburger {
     display: block;
   }
 
-  .hamburger.active .bar:nth-child(2){
+  .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
-  .hamburger.active .bar:nth-child(1){
+  .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-  .hamburger.active .bar:nth-child(3){
+  .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .nav-menu{
+  .nav-menu {
     position: fixed;
     left: -100%;
     top: 70px;
@@ -320,20 +324,18 @@ section {
     flex-direction: column;
     background-color: var(--color-bg);
     /* background-color: rgba(0, 0, 0, 0.4); */
-    width:100%; 
+    width: 100%;
     text-align: center;
     transition: 0.3s;
   }
 
-  .nav-item{
+  .nav-item {
     margin: 16px 0;
   }
-  .nav-menu.active{
+  .nav-menu.active {
     left: 0;
   }
 }
-
-
 
 /* Category Section */
 
