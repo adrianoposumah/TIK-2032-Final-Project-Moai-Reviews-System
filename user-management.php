@@ -20,7 +20,7 @@ $films = query("SELECT * FROM films");
     <!-- Style -->
     <!-- <link rel="stylesheet" href="./style/dashboard.css" /> -->
     <!-- <link rel="stylesheet" href="./style/style.css" /> -->
-    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="dashboard.css" /> 
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/bfff52efaa.js" crossorigin="anonymous"></script>
   </head>

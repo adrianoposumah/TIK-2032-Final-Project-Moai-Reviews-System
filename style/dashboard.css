@@ -200,6 +200,10 @@ body {
   border-radius: 5px;
 }
 
+.img-poster {
+  position: relative;
+}
+
 .film-card .img-poster {
   flex: 1;
   display: flex;
@@ -213,6 +217,8 @@ body {
   height: auto;
   border-radius: 5px;
   object-fit: cover;
+  z-index: 1000;
+  position: relative;
 }
 
 .film-card .poster-action {

@@ -18,9 +18,10 @@ $films = query("SELECT * FROM films");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
     <!-- Style -->
-    <!-- <link rel="stylesheet" href="./style/dashboard.css" /> -->
+    <link rel="stylesheet" href="./style/dashboard.css" />
+    <link rel="stylesheet" href="buffer.css" />
     <!-- <link rel="stylesheet" href="./style/style.css" /> -->
-    <link rel="stylesheet" href="dashboard.css" />
+    <!-- <link rel="stylesheet" href="dashboard.css" />  -->
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/bfff52efaa.js" crossorigin="anonymous"></script>
   </head>
@@ -65,6 +66,18 @@ $films = query("SELECT * FROM films");
   <?php foreach( $films as $film ) : ?>
   <div class="film-card" data-title="<?= strtolower($film['name']) ?>">
     <div class="img-poster">
+    <div class="buffer">
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                </div>
       <img src="./image/movie-poster/<?= $film['poster'] ?>" alt="" />
     </div>
     <div class="poster-action">
