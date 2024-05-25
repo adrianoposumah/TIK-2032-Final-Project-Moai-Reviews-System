@@ -32,6 +32,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moai Reviews</title>
+
+      <link rel="icon" href="./image/icon.svg">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
