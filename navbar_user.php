@@ -87,7 +87,7 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
             <a href="./home_user.php" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="./categories.php" class="nav-link">Categories</a>
+            <a href="./categories_auth.php" class="nav-link">Categories</a>
           </li>
           <li class="nav-item">
             <a href="./dashboard_user.php" class="nav-link"><?php echo $user_info[0]['fullname']; ?></a>

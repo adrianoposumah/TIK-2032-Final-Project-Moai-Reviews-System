@@ -79,6 +79,12 @@ header {
   margin: 0 10%;
 }
 
+@media only screen and (max-width: 669px) {
+  .section-margin {
+    margin: 0 5%;
+  }
+}
+
 section {
   margin: 20px 0;
 }
@@ -384,6 +390,15 @@ section {
   font-weight: var(--font-medium);
 }
 
+@media only screen and (max-width: 669px) {
+  .category h2 {
+    font-size: 20px;
+  }
+  .list-category ul li a {
+    font-size: 12px;
+  }
+}
+
 /* Carousel Section */
 
 .mySlides {
@@ -445,6 +460,18 @@ section {
   max-width: 290px;
   overflow-wrap: break-word;
   font-weight: var(--font-reguler);
+}
+
+@media only screen and (max-width: 669px) {
+  .film-information .film-title {
+    font-size: 18px;
+  }
+  .film-information .film-prop {
+    font-size: 12px;
+  }
+  .film-synopsis {
+    font-size: 8px;
+  }
 }
 
 /* Fading animation */

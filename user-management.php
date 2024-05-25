@@ -5,7 +5,7 @@
           <h1>User Management</h1>
           <div class="nav-right">
             <a href="./home_admin.php">Home</a>
-            <a href="/categories.html">Categories</a>
+            <a href="./categories_admin.php">Categories</a>
             <div class="user-profile">
               <img src="./image/user-picture/<?php echo $user_info[0]['photo']; ?>" alt="User Profile" />
             </div>
