@@ -40,34 +40,6 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
 </head>
 
 <body>
-  <!-- <header>
-    <div class="navbar">
-      <div class="navbar-logo" onclick="openPage('./index.php')">
-        <img src="./image/logo.svg" alt="Moaireviews logo" />
-      </div>
-      <div class="navbar-right">
-        <div class="navbar-list">
-          <ul>
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="./categories.php">Categories</a></li>
-            <li><a href="./signup.php">Sign up</a></li>
-            <li class="signin"><a href="./login.php">Sign in</a></li>
-          </ul>
-        </div>
-        <div class="menu">
-          <label for="chk1">
-            <i class="fa fa-bars"></i>
-          </label>
-        </div>
-        <div class="search-box">
-          <form>
-            <input type="text" name="search" id="srch" placeholder="Search" />
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header> -->
   <header>
     <nav class="navbar section-margin">
       <!-- <div class="navbar-logo" onclick="openPage('./index.php')"> -->
