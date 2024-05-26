@@ -44,9 +44,11 @@
                         </td>
                         <td>
                         <div class="action-btn">
-                        <div class="edit">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        </div>
+                          <a href="user-management-detail.php?id=<?=$user['id']?>">
+                            <div class="edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            </div>
+                          </a>
                         <div class="delete">
                         <i class="fa-solid fa-trash"></i>
                         </div>
