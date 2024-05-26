@@ -5,7 +5,7 @@
         <div class="list-category">         
           <ul>
             <?php foreach($categories as $category) : ?>
-              <li><a href="#"><?= $category['name'] ?></a></li>
+              <li><a href="categories-detail.php?id=<?= $category['id'] ?>"><?= $category['name'] ?></a></li>
             <?php endforeach; ?>
           </ul>
         </div>
