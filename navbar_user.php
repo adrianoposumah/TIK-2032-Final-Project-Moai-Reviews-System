@@ -49,7 +49,6 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
 </head>
 
 <body>
-
   <header>
     <nav class="navbar section-margin">
       <!-- <div class="navbar-logo" onclick="openPage('./index.php')"> -->
@@ -65,12 +64,18 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
             <a href="./categories_auth.php" class="nav-link">Categories</a>
           </li>
           <li class="nav-item">
-            <a href="./dashboard_user.php" class="nav-link">
-              <img height="40px" style="border-radius:50%;" src="./image/user-picture/<?php echo $user_info[0]["photo"]; ?>" alt="">
-            </a>
+            <!-- <a href="./dashboard_user.php" class="nav-link"> -->
+            <div id="img-dropdown"><img height="40px" style="border-radius:50%;" src="./image/user-picture/<?php echo $user_info[0]["photo"]; ?>" alt=""></div>
+            <!-- </a> -->
+            <ul id="dropdown-item">
+              <li><a href="#" class="dropdown-link">My accounts</a></li>
+              <li class="dashboard-nav"><a href="./dashboard_user.php" class="dropdown-link">Dashboard</a></li>
+              <li><a href="./logout.php" class="dropdown-link">Log Out</a></li>
+            </ul>
+            <!-- <a id="dropdown-item">test</a> -->
           </li>
         </ul>
-        <div class=" hamburger">
+        <div class="hamburger">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>

@@ -13,6 +13,16 @@ document.querySelectorAll(".nav-link").forEach(n=> n.addEventListener("click", (
   navMenu.classList.remove("active");
 }))
 
+//dropdown toggle
+const dropdown = document.getElementById('img-dropdown')
+const dropdownDisplay = document.getElementById('dropdown-item');
+dropdown.addEventListener("click", () => {
+  console.log("Mouse hovering over dropdown element");
+  dropdownDisplay.style.display = 'block';
+});
+
+
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
