@@ -30,11 +30,13 @@
     <h1>FEATURED</h1>
     <div class="movie-container">
       <?php foreach($features as $feature) : ?>
-      <div class="movie-card">
-        <img src="image/movie-poster/<?= $feature['poster'] ?>" alt="<?= $feature['name'] ?>" />
-        <h3><?= $feature['name'] ?></h3>
-        <p><?= $feature['release_year'] ?></p>
-      </div>
+        <div class="movie-card">
+            <a href="film-detail.php?id=<?= $feature['film_id'] ?>">
+                <img src="image/movie-poster/<?= $feature['poster'] ?>" alt="<?= $feature['name'] ?>" />
+                <h3><?= $feature['name'] ?></h3>
+                <p><?= $feature['release_year'] ?></p>
+            </a>
+        </div>
       <?php endforeach; ?>
     </div>
   </div>
@@ -44,11 +46,13 @@
     <h1>COMING SOON</h1>
     <div class="movie-container">
       <?php foreach($comingsoons as $comingsoon) : ?>
-      <div class="movie-card">
-        <img src="image/movie-poster/<?= $comingsoon['poster'] ?>" alt="<?= $comingsoon['name'] ?>" />
-        <h3><?= $comingsoon['name'] ?></h3>
-        <p><?= $comingsoon['release_year'] ?></p>
-      </div>
+        <div class="movie-card">
+          <a href="film-detail.php?id=<?= $comingsoon['film_id'] ?>">
+            <img src="image/movie-poster/<?= $comingsoon['poster'] ?>" alt="<?= $comingsoon['name'] ?>" />
+            <h3><?= $comingsoon['name'] ?></h3>
+            <p><?= $comingsoon['release_year'] ?></p>
+          </a>
+        </div>
       <?php endforeach; ?>
     </div>
   </div>
@@ -59,11 +63,13 @@
     <h1>ANIME</h1>
     <div class="movie-container">
       <?php foreach($animes as $anime) : ?>
-      <div class="movie-card">
-        <img src="image/movie-poster/<?= $anime['poster'] ?>" alt="<?= $anime['name'] ?>" />
-        <h3><?= $anime['name'] ?></h3>
-        <p><?= $anime['release_year'] ?></p>
-      </div>
+        <div class="movie-card">
+          <a href="film-detail.php?id=<?= $anime['film_id'] ?>">
+            <img src="image/movie-poster/<?= $anime['poster'] ?>" alt="<?= $anime['name'] ?>" />
+            <h3><?= $anime['name'] ?></h3>
+            <p><?= $anime['release_year'] ?></p>
+          </a>
+        </div>
       <?php endforeach; ?>
     </div>
   </div>
@@ -74,11 +80,13 @@
     <h1>TV-SERIES</h1>
     <div class="movie-container">
       <?php foreach($tvseries as $tvseri) : ?>
-      <div class="movie-card">
-        <img src="image/movie-poster/<?= $tvseri['poster'] ?>" alt="<?= $tvseri['name'] ?>" />
-        <h3><?= $tvseri['name'] ?></h3>
-        <p><?= $tvseri['release_year'] ?></p>
-      </div>
+        <div class="movie-card">
+          <a href="film-detail.php?id=<?= $tvseri['film_id'] ?>">
+            <img src="image/movie-poster/<?= $tvseri['poster'] ?>" alt="<?= $tvseri['name'] ?>" />
+            <h3><?= $tvseri['name'] ?></h3>
+            <p><?= $tvseri['release_year'] ?></p>
+          </a>
+        </div>
       <?php endforeach; ?>
     </div>
   </div>

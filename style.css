@@ -65,6 +65,10 @@ h2 {
   /* border: 1px solid #fff; */
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   width: 100%;
   height: 100px;
@@ -185,6 +189,7 @@ section {
   justify-content: space-between;
   align-items: center;
   /* padding: 0 24px; */
+  z-index: 3001;
 }
 
 /* .navbar-logo{
@@ -800,4 +805,296 @@ h4 {
   .logo img {
     max-width: 40px;
   }
+}
+
+/* Film Detail */
+
+.film-trailer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 90%; /* Atur lebar sesuai kebutuhan Anda */
+  max-width: 760px; /* Batas maksimal lebar */
+}
+
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.film-detail-container {
+  margin-top: 100px;
+}
+
+.film-detail-container .detail-content1 {
+  display: flex;
+}
+
+@media only screen and (max-width: 669px) {
+  .film-detail-container .detail-content1 {
+    display: grid;
+  }
+}
+
+.detail-content1,
+.detail-content2 {
+  justify-content: space-between;
+}
+
+.detail-content1 .film-detail {
+  display: flex;
+  border: 1px solid var(--color-secondary);
+  border-radius: 10px;
+  width: 75%;
+  height: auto;
+  max-height: 450px;
+}
+
+.film-detail .film-poster img {
+  border-radius: 10px;
+  /* height: 80%; */
+  width: auto;
+}
+
+.film-detail .film-detail-information {
+  padding: 18px;
+}
+
+.film-detail-information {
+  color: var(--color-light);
+}
+
+.film-detail-information h3 {
+  font-size: 20px;
+  font-weight: var(--font-bold);
+}
+
+.film-detail-information .film-prop {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 13px;
+}
+
+.film-prop {
+  color: var(--color-secondary);
+}
+
+.film-prop .film-rate {
+  padding: 2px 3px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 5px;
+  color: var(--color-secondary);
+  font-weight: var(--font-bold);
+}
+.film-prop .film-rating {
+  padding: 2px 3px;
+  color: var(--color-primary);
+  font-weight: var(--font-bold);
+  align-items: center;
+}
+
+.film-prop .film-rating i {
+  padding-right: 4px;
+}
+
+.film-prop .film-duration {
+  color: var(--color-secondary);
+}
+
+.film-detail-information .film-detail-synopsis {
+  max-width: 100%;
+  margin: 15px 0;
+}
+
+.film-info {
+  width: 100%;
+  max-width: 800px;
+}
+
+.film-info div {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.label {
+  width: 100px;
+  font-weight: var(--font-semibold);
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+}
+
+.detail-content1 .film-related {
+  width: 24%;
+}
+
+.detail-content1 h2,
+.detail-content2 h2 {
+  margin-bottom: 10px;
+}
+
+.film-related-item {
+  border: 1px solid var(--color-secondary);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.film-related-item a {
+  height: 80px;
+  display: flex;
+}
+
+.film-related-information {
+  margin-left: 10px;
+}
+
+.film-related-item .film-poster img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.film-related-item .film-related-title {
+  color: var(--color-light);
+  font-size: 18px;
+}
+
+.film-related-item .film-prop {
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+  margin-left: -2px;
+  gap: 3px;
+}
+
+.film-status .content a {
+  padding: 5px;
+  align-items: center;
+  border-radius: 5px;
+  color: var(--color-light);
+  font-weight: var(--font-semibold);
+}
+
+.detail-content2 {
+  margin-top: 20px;
+  display: flex;
+}
+
+.detail-content2 .film-comment {
+  width: 75%;
+}
+
+.detail-content2 .film-recommend {
+  width: 24%;
+}
+
+.comment-content h5,
+.user-comment p {
+  color: var(--color-light);
+}
+
+.comment-field {
+  border-top: 1px solid var(--color-secondary);
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.comment-field .comment-user-input {
+  display: flex;
+  margin: 10px 0;
+}
+
+.comment-user-input .comment-input {
+  margin-left: 10px;
+  flex-grow: 1;
+  position: relative;
+}
+
+.comment-input textarea {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  resize: none;
+  overflow: hidden;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: height 0.3s ease-in-out;
+  outline: none;
+  border: none;
+  background-color: var(--color-light);
+}
+
+.toolbar {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-light);
+  padding: 5px;
+  font-size: 15px;
+}
+.toolbar .text-tool {
+  gap: 5px;
+}
+
+.toolbar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.send-button {
+  color: var(--color-dark);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-input textarea:focus + .toolbar,
+.auto-resize {
+  display: flex;
+}
+
+.comment-field .film-user-comment {
+  margin-top: 20px;
+  display: flex;
+}
+
+.user-comment,
+.comment-date {
+  color: var(--color-secondary);
+}
+
+.user-comment {
+  margin-left: 10px;
+}
+
+.user-comment .comment-date {
+  font-size: 15px;
 }

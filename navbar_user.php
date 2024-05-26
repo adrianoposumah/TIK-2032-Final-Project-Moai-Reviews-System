@@ -80,7 +80,7 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
   <header>
     <nav class="navbar section-margin">
       <!-- <div class="navbar-logo" onclick="openPage('./index.php')"> -->
-      <div class="navbar-logo" onclick="openPage('./index.php')">
+      <div class="navbar-logo" onclick="openPage('./home_user.php')">
         <img src="./image/logo.svg" alt="Moaireviews logo" />
       </div>
       <div class="navbar-right">
