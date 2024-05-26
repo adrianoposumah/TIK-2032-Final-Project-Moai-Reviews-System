@@ -5,9 +5,9 @@ require './config/functions.php';
 session_start();
 
 if (!isset($_SESSION['admin_name']) && !isset($_SESSION['user_name'])) {
-    header('HTTP/1.1 401 Unauthorized');
-    header('Location: 401.html');
-    exit;
+  header('HTTP/1.1 401 Unauthorized');
+  header('Location: 401.html');
+  exit;
 }
 
 $user_id = $_SESSION['user_id'];
@@ -34,7 +34,7 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moai Reviews</title>
 
-    <link rel="icon" href="./image/icon.svg">
+  <link rel="icon" href="./image/icon.svg">
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,34 +49,7 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
 </head>
 
 <body>
-  <!-- <header>
-    <div class="navbar">
-      <div class="navbar-logo" onclick="openPage('./index.php')">
-        <img src="./image/logo.svg" alt="Moaireviews logo" />
-      </div>
-      <div class="navbar-right">
-        <div class="navbar-list">
-          <ul>
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="./categories.php">Categories</a></li>
-            <li><a href="./signup.php">Sign up</a></li>
-            <li class="signin"><a href="./login.php">Sign in</a></li>
-          </ul>
-        </div>
-        <div class="menu">
-          <label for="chk1">
-            <i class="fa fa-bars"></i>
-          </label>
-        </div>
-        <div class="search-box">
-          <form>
-            <input type="text" name="search" id="srch" placeholder="Search" />
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header> -->
+
   <header>
     <nav class="navbar section-margin">
       <!-- <div class="navbar-logo" onclick="openPage('./index.php')"> -->
@@ -92,13 +65,12 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
             <a href="./categories_auth.php" class="nav-link">Categories</a>
           </li>
           <li class="nav-item">
-            <a href="./dashboard_user.php" class="nav-link"><?php echo $user_info[0]['fullname']; ?></a>
-          </li>
-          <li class="nav-item">
-            <!-- <img height="40px" style="border-radius: 50%;" src="./image/user-picture/<?php echo $user_info[0]['photo']; ?>" alt="> -->
+            <a href="./dashboard_user.php" class="nav-link">
+              <img height="40px" style="border-radius:50%;" src="./image/user-picture/<?php echo $user_info[0]["photo"]; ?>" alt="">
+            </a>
           </li>
         </ul>
-        <div class="hamburger">
+        <div class=" hamburger">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
