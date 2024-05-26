@@ -13,34 +13,49 @@
         </header>
         <!-- Content -->
         <section>
-         <div class="search-box">
-  <form id="search-form">
-    <input type="text" name="search" id="srch" placeholder="Search" />
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-</div>
-<!-- <div class="film-container" id="film-container">
-  <?php foreach( $films as $film ) : ?>
-  <div class="film-card" data-title="<?= strtolower($film['name']) ?>">
-    <div class="img-poster">
-      <img src="./image/movie-poster/<?= $film['poster'] ?>" alt="" />
-    </div>
-    <div class="poster-action">
-      <h4 class="film-title"><?= $film['name'] ?></h4>
-      <div class="action-btn">
-        <div class="edit">
-          <i class="fa-solid fa-pen-to-square"></i>
-        </div>
-        <div class="delete">
-          <i class="fa-solid fa-trash"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php endforeach; ?>
-</div> -->
-
-
+            <div class="search-box">
+                <form id="search-form">
+                    <input type="text" name="search" id="srch" placeholder="Search" />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="user-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Account Created</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <?php foreach( $users as $user ) : ?>
+                    <tr>
+                        <td> 
+                        <img src="./image/user-picture/<?= $user['photo'] ?>" alt="Adriano Posumah">
+                        </td>
+                        <td><?= $user['fullname'] ?>
+                        </td>
+                        <td><?= $user['role'] ?>
+                        </td>
+                        <td><?= $user['account_created'] ?>
+                        </td>
+                        <td>
+                        <div class="action-btn">
+                        <div class="edit">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <div class="delete">
+                        <i class="fa-solid fa-trash"></i>
+                        </div>
+                        </td>
+                      </tr>
+                      <?php endforeach; ?>
+                      </tbody>
+                  </table>
+            </div>
         </section>
       </main>
     </div>

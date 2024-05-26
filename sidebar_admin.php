@@ -19,6 +19,8 @@ $user_id = $_SESSION['user_id'];
 
 $user_info = query("SELECT * FROM users WHERE id = $user_id");
 
+$users = query("SELECT * FROM users WHERE id <> $user_id");
+
 // Mengambil informasi film
 $films = query("SELECT * FROM films");
 
@@ -42,7 +44,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="./style/dashboard.css" />
     <link rel="stylesheet" href="buffer.css" />
     <!-- <link rel="stylesheet" href="./style/style.css" /> -->
-    <!-- <link rel="stylesheet" href="dashboard.css" />  -->
+    <link rel="stylesheet" href="dashboard.css" /> 
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/bfff52efaa.js" crossorigin="anonymous"></script>
   </head>
