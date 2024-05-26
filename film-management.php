@@ -40,12 +40,16 @@
     <div class="poster-action">
       <h4 class="film-title"><?= $film['name'] ?></h4>
       <div class="action-btn">
+        <a href="film-management-detail.php?id=<?= $film['film_id'] ?>">
         <div class="edit">
-          <i class="fa-solid fa-pen-to-square"></i>
-        </div>
-        <div class="delete">
-          <i class="fa-solid fa-trash"></i>
-        </div>
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
+        </a>
+        <a href="">
+          <div class="delete">
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </a>
       </div>
     </div>
   </div>

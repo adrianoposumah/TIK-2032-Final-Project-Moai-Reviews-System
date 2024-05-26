@@ -235,6 +235,11 @@ body {
   align-items: center;
   text-align: center;
 }
+
+.edit a i,
+.delete a i {
+  color: var(--color-light);
+}
 .edit {
   background-color: var(--color-danger);
 }

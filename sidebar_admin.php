@@ -21,6 +21,8 @@ $user_info = query("SELECT * FROM users WHERE id = $user_id");
 
 $users = query("SELECT * FROM users WHERE id <> $user_id");
 
+$categories = query("SELECT * FROM `genres` WHERE id <> '00N';");
+
 // Mengambil informasi film
 $films = query("SELECT * FROM films");
 
@@ -41,7 +43,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
     <!-- Style -->
-    <link rel="stylesheet" href="./style/dashboard.css" />
+    <!-- <link rel="stylesheet" href="./style/dashboard.css" /> -->
     <link rel="stylesheet" href="buffer.css" />
     <!-- <link rel="stylesheet" href="./style/style.css" /> -->
     <link rel="stylesheet" href="dashboard.css" /> 
