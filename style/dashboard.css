@@ -236,8 +236,8 @@ body {
   text-align: center;
 }
 
-.edit a i,
-.delete a i {
+.action-btn a i,
+.action-btn a i {
   color: var(--color-light);
 }
 .edit {
@@ -361,4 +361,142 @@ tbody .action-btn .delete {
   .film-container {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Film Management Detail */
+
+.film-field {
+  border: 1px solid var(--color-secondary);
+  margin: 0 40px 0 15px;
+  border-radius: 10px;
+  font-family: var(--Font-Poppins);
+  padding: 50px;
+}
+
+.film-field input {
+  font-family: var(--Font-Poppins);
+}
+
+.film-field .grid1,
+.film-field .grid2,
+.film-field .grid3,
+.film-synopsis {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.grid1 .film-poster,
+.grid1 .film-banner,
+.grid2a .film-title,
+.grid2a .film-genre,
+.film-date .film-dm,
+.film-date .film-year,
+.grid2 .film-year,
+.grid2 .film-director,
+.grid2b,
+.grid3a .film-production,
+.grid3a .film-duration,
+.grid3b .film-cast,
+.film-rate,
+.film-rating,
+.film-synopsis,
+.film-director {
+  display: grid;
+}
+
+.grid1 .film-poster,
+.grid1 .film-banner {
+  position: relative;
+}
+
+.grid1 .film-poster img,
+.grid1 .film-banner img {
+  height: 500px;
+  width: auto;
+}
+
+.grid2b,
+.grid3b {
+  width: 60%;
+}
+
+.grid2b {
+  flex-wrap: nowrap;
+}
+
+.grid2b .film-date,
+.grid3bc {
+  justify-content: space-between;
+}
+
+.grid2b .film-dm,
+.grid2b .film-year {
+  width: 45%;
+}
+
+.film-field .film-poster,
+.grid2a,
+.grid3a {
+  width: 40%;
+  margin-right: 20px;
+}
+
+.grid2 .film-date,
+.grid3b .grid3bc {
+  display: flex;
+}
+
+.film-field label {
+  font-size: 20px;
+  font-weight: var(--font-semibold);
+}
+
+.film-field input,
+.film-field textarea {
+  font-size: 18px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 10px;
+  font-family: var(--Font-Poppins);
+}
+
+.film-field textarea {
+  height: auto;
+}
+
+.grid2,
+.grid3 {
+  margin-top: 30px;
+}
+
+.film-genre .genre-option {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.genre-option .genre-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  font-size: 13px;
+  font-weight: var(--font-medium);
+  background-color: var(--color-light);
+  border-radius: 5px;
+  padding: 0 10px;
+  cursor: pointer; /* Menambahkan pointer cursor untuk menandakan elemen yang bisa diklik */
+}
+
+.genre-option .genre-type label {
+  font-size: 13px;
+  font-weight: var(--font-medium);
+  color: var(--color-dark);
+  margin-left: 5px;
+}
+
+.genre-option .genre-type.checked {
+  background-color: yellow;
 }

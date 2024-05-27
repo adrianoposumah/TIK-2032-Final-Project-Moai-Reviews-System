@@ -29,7 +29,7 @@
 
   </body>
   <!-- <script src="script.js"></script> -->
-  <script src="./script/script.js"></script>
+  <script src="./script/script.js?v=<?php echo time(); ?>"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const textarea = document.getElementById('myTextarea');

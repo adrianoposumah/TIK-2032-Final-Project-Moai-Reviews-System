@@ -444,11 +444,13 @@ tbody .action-btn .delete {
   font-weight: var(--font-semibold);
 }
 
-.film-field input {
+.film-field input,
+.film-field textarea {
   font-size: 18px;
   height: 35px;
   border-radius: 5px;
   border: none;
+  padding: 0 10px;
 }
 
 .grid2,

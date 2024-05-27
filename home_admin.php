@@ -43,22 +43,6 @@
   </div>
 </section>
 <section class="section-margin">
-  <div class="featured">
-    <h1>FEATURED</h1>
-    <div class="movie-container">
-      <?php foreach($features as $feature) : ?>
-        <div class="movie-card">
-            <a href="film-detail.php?id=<?= $feature['film_id'] ?>">
-                <img src="image/movie-poster/<?= $feature['poster'] ?>" alt="<?= $feature['name'] ?>" />
-                <h3><?= $feature['name'] ?></h3>
-                <p><?= $feature['release_year'] ?></p>
-            </a>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-<section class="section-margin">
   <div class="coming-soon">
     <h1>COMING SOON</h1>
     <div class="movie-container">

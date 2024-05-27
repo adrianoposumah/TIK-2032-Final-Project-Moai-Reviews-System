@@ -11,39 +11,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $role = $_POST['role'];
     $photo = $_FILES['photo'];
 
-    // Proses unggahan file foto
     if ($photo['error'] == UPLOAD_ERR_OK) {
         $photo_name = basename($photo['name']);
         $target_path = "./image/user-picture/" . $photo_name;
         
         if (move_uploaded_file($photo['tmp_name'], $target_path)) {
-            // Update query untuk memperbarui data pengguna
             $query = "UPDATE users SET fullname='$name', role='$role', photo='$photo_name' WHERE id='$user_id'";
             $result = query($query);
-
-            if ($result !== false) {
-                echo "User updated successfully.";
-                // Refresh data user
-                $user = query("SELECT * FROM users WHERE id = '$user_id' LIMIT 1;");
-            } else {
-                echo "Error updating user.";
-            }
-        } else {
-            echo "Error uploading the file.";
-        }
     } else {
-        // Update query tanpa memperbarui foto jika tidak ada foto baru yang diunggah
         $query = "UPDATE users SET fullname='$name', role='$role' WHERE id='$user_id'";
         $result = query($query);
-
-        if ($result !== false) {
-            echo "User updated successfully.";
-            // Refresh data user
-            $user = query("SELECT * FROM users WHERE id = '$user_id' LIMIT 1;");
-        } else {
-            echo "Error updating user.";
-        }
     }
+  }
 }
 ?>
 

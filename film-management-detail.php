@@ -65,10 +65,11 @@ if(isset($_GET['id'])) {
                     <input type="year" value="<?php echo $film[0]['release_year']; ?>">
                   </div>
                 </div>
-                <div class="film-director">
-                  <label for="datemonth">Director: </label>
-                    <input type="text" value="<?php echo $film[0]['director']; ?>">
-                </div>
+                
+                <div class="film-synopsis">
+                <label for="synopsis">Synopsis:</label>
+                  <textarea type="text" value=""><?php echo $film[0]['synopsis']; ?></textarea>
+              </div>
               </div>
             </div>
             <div class="grid3">
@@ -88,9 +89,13 @@ if(isset($_GET['id'])) {
                   <input type="text" value="<?php echo $film[0]['cast']; ?>">
                 </div>
                 <div class="grid3bc">
+                  <div class="film-director">
+                  <label for="datemonth">Director: </label>
+                    <input type="text" value="<?php echo $film[0]['director']; ?>">
+                </div>
                   <div class="film-rate">
                     <label for="rate">Rate:</label>
-                  <input type="text" value="<?php echo $film[0]['release_date']; ?>">
+                  <input type="text" value="<?php echo $film[0]['rate']; ?>">
                   </div>
                   <div class="film-rating">
                     <label for="rating">Rating:</label>
@@ -99,10 +104,7 @@ if(isset($_GET['id'])) {
                   </div>
               </div>
             </div>
-              <div class="film-synopsis">
-                <label for="synopsis">Synopsis:</label>
-                  <textarea type="text" value=""><?php echo $film[0]['synopsis']; ?></textarea>
-              </div>
+              
              </form>
           </div>
         </section>
