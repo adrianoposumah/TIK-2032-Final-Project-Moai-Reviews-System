@@ -316,29 +316,29 @@ tbody .action-btn .delete {
 }
 
 .user-picture {
-  width: 100px; /* Atur sesuai kebutuhan Anda */
+  /* width: 100px; Atur sesuai kebutuhan Anda */
+  max-width: 200px;
   height: auto;
   margin-right: 20px; /* Jarak antara gambar dan form */
 }
 
 .user-form {
   display: grid;
+  align-content: space-evenly;
 }
 
-.user-info form {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-}
-
-.user-form label {
-  margin-bottom: 5px;
-}
-
-.user-form input {
+.user-form input .user-info select {
   margin-bottom: 10px;
   padding: 5px;
   width: 200px; /* Atur sesuai kebutuhan Anda */
+}
+
+.user-info .form-submit {
+  align-self: flex-end;
+  margin-top: 20px; /* Tambahkan jarak atas jika diperlukan */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .user-info button {

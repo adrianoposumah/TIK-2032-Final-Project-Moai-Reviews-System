@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <a href="./home_admin.php">Home</a>
               <a href="./categories_admin.php">Categories</a>
               <div class="user-profile">
-                <img src="./image/user-picture/<?php echo $user_info[0]['photo']; ?>" alt="User Profile" />
+                <img src="./image/movie-poster<?php echo $user_info[0]['photo']; ?>" alt="User Profile" />
               </div>
             </div>
           </header>
@@ -49,8 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" value="<?php echo $user[0]['fullname']; ?>">
                     <label for="role">Role:</label>
-                    <input type="text" id="role" name="role" value="<?php echo $user[0]['role']; ?>">
-                  </div>
+                  <select id="role" name="role">
+                    <option value="admin" <?php echo $user[0]['role'] == 'admin' ? 'selected' : ''; ?>>Admin</option>
+                    <option value="user" <?php echo $user[0]['role'] == 'user' ? 'selected' : ''; ?>>User</option>
+                  </select>
                 </div>
                 <div class="form-submit">
                   <button type="submit">Save</button>
