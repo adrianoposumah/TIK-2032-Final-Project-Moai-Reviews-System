@@ -10,7 +10,7 @@
       <div class="film-information section-margin">
         <div class="film-title"><?= $banner['name'] ?></div>
         <div class="film-prop">
-          <div class="film-year"><?= $banner['release_year'] ?> |</div>
+          <div class="film-year"><?= $banner['release_year'] ?>  </div>
           <!-- <div class="film-genre"><?= $banner['genre_name'] ?></div> -->
           <div class="film-type"><?= $banner['type'] ?></div>
         </div>

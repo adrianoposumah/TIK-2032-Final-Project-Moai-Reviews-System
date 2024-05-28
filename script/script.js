@@ -169,3 +169,72 @@ document.addEventListener("DOMContentLoaded", function () {
   // Muat komentar saat halaman pertama kali dimuat
   fetchComments();
 });
+
+const question = document.querySelector(".left h2");
+const stars = document.querySelectorAll(".fa-star");
+
+const clearActive = () => {
+  //remove active class from all stars
+  stars.forEach((star) => {
+    star.classList.remove("active");
+  });
+};
+
+const addActive = (star, index) => {
+  //add active class to current star
+  star.classList.add("active");
+  let count = index;
+
+  //add active class to previous star from current start
+  while (count > 0) {
+    document.getElementById(`star-${count}`).classList.add("active");
+    count--;
+  }
+};
+
+//generate question according to clicked star
+const generateQuestion = (index) => {
+  if (index === 0) {
+    question.innerHTML = `<img src="./image/sad.svg" />`;
+  }
+
+  if (index === 1 || index === 2) {
+    question.innerHTML = `<img src="./image/meh.svg" />`;
+  }
+
+  if (index === 3) {
+    question.innerHTML = `<img src="./image/smile.svg" />`;
+  }
+
+  if (index === 4) {
+    question.innerHTML = `<img src="./image/love.svg" />`;
+  }
+};
+
+//handle star ratings
+stars.forEach((star, index) =>
+  star.addEventListener("click", () => {
+    clearActive();
+    addActive(star, index);
+    generateQuestion(index);
+  })
+);
+
+function updateStatus() {
+  const statusLink = document.querySelector(".film-status .content a");
+  const statusId = statusLink.id;
+
+  if (statusId === "digital") {
+    statusLink.className = "digital";
+    statusLink.textContent = "Digital";
+  } else if (statusId === "comingsoon") {
+    statusLink.className = "comingsoon";
+    statusLink.textContent = "Coming Soon";
+  } else if (statusId === "air") {
+    statusLink.className = "air";
+    statusLink.textContent = "On Air";
+  }
+}
+
+// Panggil fungsi updateStatus setelah DOM siap
+document.addEventListener("DOMContentLoaded", updateStatus);

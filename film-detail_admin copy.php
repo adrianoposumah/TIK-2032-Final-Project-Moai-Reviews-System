@@ -82,9 +82,9 @@ if (isset($_GET['id'])) {
             <?php echo $films[0]['synopsis']; ?>
           </p>
            <div class="film-info">
-                <div class="film-type info-prop"><span class="label">Type:</span> <span class="content"><?php echo $films[0]['type']; ?></span></div>
-                <div class="film-country info-prop"><span class="label">Country:</span> <span class="content"><?php echo $films[0]['country']; ?></span></div>
-                <div class="film-genre info-prop">
+                <div class="film-type"><span class="label">Type:</span> <span class="content"><?php echo $films[0]['type']; ?></span></div>
+                <div class="film-country"><span class="label">Country:</span> <span class="content"><?php echo $films[0]['country']; ?></span></div>
+                <div class="film-genre">
                     <span class="label">Genre:</span> 
                     <span class="content">
                         <?php
@@ -96,39 +96,16 @@ if (isset($_GET['id'])) {
                         ?>
                     </span>
                 </div>
-                <div class="film-release info-prop"><span class="label">Release:</span> <span class="content"><?php echo $films[0]['release_date']; ?></span></div>
-                <div class="film-director info-prop"><span class="label">Director:</span> <span class="content"><?php echo $films[0]['director']; ?></span></div>
-                <div class="film-production info-prop"><span class="label">Production:</span> <span class="content"><?php echo $films[0]['production']; ?></span></div>
-                <div class="film-cast info-prop"><span class="label">Cast:</span> <span class="content"><?php echo $films[0]['cast']; ?></span></div>
-                <div class="film-status info-prop">
-                  <span class="label">Status:</span>
-                  <span class="content">
-                    <a href="" id="<?php echo $films[0]['status']; ?>">Default Status</a>
-                  </span>
-                </div>
-                <!-- <h5>Give Rating to this Film!</h5> -->
-                <div class="rating-card">
-                          <div class="left">
-                            <h2>
-                              <img src="./image/smile-2.svg" />
-                            </h2>
-                            <ul class="ratings">
-                              <i class="fa-solid fa-star" id="star-1"></i>
-
-                              <i class="fa-solid fa-star" id="star-2"></i>
-
-                              <i class="fa-solid fa-star" id="star-3"></i>
-
-                              <i class="fa-solid fa-star" id="star-4"></i>
-
-                              <i class="fa-solid fa-star" id="star-5"></i>
-                            </ul>
-                            <button onclick="onSubmit()">Rate</button>
-                          </div>
-                </div>
-              </div>
+                <div class="film-release"><span class="label">Release:</span> <span class="content"><?php echo $films[0]['release_date']; ?></span></div>
+                <div class="film-director"><span class="label">Director:</span> <span class="content"><?php echo $films[0]['director']; ?></span></div>
+                <div class="film-production"><span class="label">Production:</span> <span class="content"><?php echo $films[0]['production']; ?></span></div>
+                <div class="film-cast"><span class="label">Cast:</span> <span class="content"><?php echo $films[0]['cast']; ?></span></div>
+                <div class="film-status"><span class="label">Status:</span> <span class="content"><a href="" style="background-color: rgb(74, 146, 255);"><?php echo $films[0]['status']; ?></a></span></div>
+            </div>
         </div>
-        
+        <div class="rating-card">
+          
+        </div>
       </div>
       <div class="film-related">
         <h2>Related</h2>
@@ -153,8 +130,6 @@ if (isset($_GET['id'])) {
           <?php endforeach; ?>
       </div>
     </div>
-       
-
     <div class="detail-content2">
 <div class="film-comment">
     <h2>COMMENT</h2>
