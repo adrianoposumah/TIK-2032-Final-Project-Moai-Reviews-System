@@ -1,10 +1,11 @@
 <?php include 'navbar.php'; ?>
+
 <section>
   <div class="carousel-container">
   <?php foreach($banners as $banner) : ?>
     <div class="mySlides fade">
       <div class="film-banner">
-        <img src="./image/movie-banner/Money-Heist-banner.jpg" style="width: 100%" />
+        <img src="./image/movie-banner/<?= $banner['banner'] ?>" style="width: 100%" />
       </div>
       <div class="film-information section-margin">
         <div class="film-title"><?= $banner['name'] ?></div>

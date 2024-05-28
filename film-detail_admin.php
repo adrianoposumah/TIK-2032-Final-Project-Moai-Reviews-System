@@ -8,10 +8,10 @@ if (isset($_GET['id'])) {
     if (!empty($films)) {
         $film_name = $films[0]['name'];
 
-        $comments = query("SELECT comments.*, users.photo, users.fullname 
-                          FROM comments 
-                          JOIN users ON comments.user_id = users.id 
-                          WHERE `film_id` = '$film_id' ORDER BY comment_date DESC");
+        // $comments = query("SELECT comments.*, users.photo, users.fullname 
+        //                   FROM comments 
+        //                   JOIN users ON comments.user_id = users.id 
+        //                   WHERE `film_id` = '$film_id' ORDER BY comment_date DESC");
 
         $recommended = query("SELECT films.*
                             FROM films
@@ -46,25 +46,6 @@ if (isset($_GET['id'])) {
     exit;
 }
 
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $comment = $_POST['comment'];
-    // Query untuk insert data komentar ke database
-    $query = "INSERT INTO `comments` (`film_id`, `user_id`, `fullname`, `comment`, `comment_date`) 
-              VALUES ('$film_id', '$user_id', '{$user_info[0]['fullname']}', '$comment', NOW())";
-
-    // Eksekusi query
-    $result = mysqli_query($conn, $query);
-
-    if ($result) {
-        // Redirect kembali ke halaman ini setelah menambah komentar
-        header('Location: film-detail_user.php?id=' . $film_id);
-        exit;
-    } else {
-        // Handle jika terjadi kesalahan saat menyimpan komentar
-        $error_message = "Failed to add comment.";
-    }
-}
 ?>
 <div class="film-trailer">
     <div class="video-wrapper">
@@ -157,8 +138,10 @@ if (isset($_GET['id'])) {
                     <img src="./image/user-picture/default.jpg" width="60px" style="border-radius: 50%;" alt="">
                 </div>
                 <div class="comment-input">
-                  <form id="commentForm" action="" method="POST">
-                      <textarea id="myTextarea" name="comment" class="auto-resize" placeholder="Add a comment..."></textarea>
+                  <form id="commentForm" class="form_data">
+                      <textarea id="myTextarea" name="comment" class="auto-resize comment-form form_data" placeholder="Add a comment..."></textarea>
+                      <input type="hidden" name="film_id" value="<?= $film_id ?>" class="form_data">
+                      <input type="hidden" name="fullname" value="<?= $user_info[0]['fullname'] ?>" class="form_data">
                       <div class="toolbar">
                           <div class="text-tool">
                               <button type="button" onclick="wrapText('b')"><b>B</b></button>
@@ -168,7 +151,7 @@ if (isset($_GET['id'])) {
                               <button type="button" onclick="wrapText('a', 'href=&quot;#&quot;')"><i class="fa-solid fa-link"></i></button>
                               <button type="button" onclick="wrapText('div')"><i class="fa-solid fa-eye-slash"></i></button>
                           </div>
-                          <button type="submit" name="submit" class="send-button">Comment</button>
+                          <button type="submit" id="submit-comment" name="submit" class="send-button">Comment</button>
                       </div>
                   </form>
                   <?php if(isset($error_message)) : ?>
@@ -176,28 +159,10 @@ if (isset($_GET['id'])) {
                   <?php endif; ?>
               </div>
             </div>
-           <?php foreach($comments as $comment) : ?>
-            <div class="film-user-comment">
-                <div class="user-photo">
-                    <img src="./image/user-picture/<?= $comment['photo'] ?>" width="50px" style="border-radius: 50%;" alt="">
-                </div>
-                <div class="user-comment">
-                  <div class="username-comment">
-                    <?= $comment['fullname'] ?>
-                  </div>
-                  <div class="comment-date">
-                    <?= $comment['comment_date'] ?>
-                  </div>
-                  <div class="comment">
-                    <p><?= $comment['comment'] ?></p>
-                  </div>
-                </div>
-            </div>
-            <?php endforeach; ?>
+            <?php include 'fetch_comments.php'; ?>
         </div>
     </div>
 </div>
-
 
 
       <div class="film-recommend">

@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
 
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $comment = $_POST['comment'];
+    $comment =htmlspecialchars($_POST['comment']);
     // Query untuk insert data komentar ke database
     $query = "INSERT INTO `comments` (`film_id`, `user_id`, `fullname`, `comment`, `comment_date`) 
               VALUES ('$film_id', '$user_id', '{$user_info[0]['fullname']}', '$comment', NOW())";
