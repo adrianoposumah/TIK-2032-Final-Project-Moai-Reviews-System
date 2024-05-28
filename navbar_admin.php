@@ -78,7 +78,7 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
             <ul id="dropdown-item">
               <li><a href="#" class="dropdown-link">My accounts</a></li>
               <li><a href="./home_user.php" class="dropdown-link">Switch to User</a></li>
-              <li class="dashboard-nav"><a href="./dashboard_user.php" class="dropdown-link">Dashboard</a></li>
+              <li class="dashboard-nav"><a href="./dashboard.php" class="dropdown-link">Dashboard</a></li>
               <li><a href="./logout.php" class="dropdown-link">Log Out</a></li>
             </ul>
             <!-- <a id="dropdown-item">test</a> -->

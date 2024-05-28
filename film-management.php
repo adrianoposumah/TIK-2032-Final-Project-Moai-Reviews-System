@@ -13,12 +13,26 @@
         </header>
         <!-- Content -->
         <section>
-         <div class="search-box">
-  <form id="search-form">
-    <input type="text" name="search" id="srch" placeholder="Search" />
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-</div>
+          <div class="header-management">
+            <div class="search-box">
+              <form id="search-form">
+                <input type="text" name="search" id="srch" placeholder="Search" />
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="filter">
+              <div class="filter-button">
+                <select name="genre" id="">
+                  <option value="">All</option>
+                  <?php foreach($categories as $category) : ?>
+                    <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+              </div>
+              <a href="add-film.php">
+                <i class="fa-solid fa-plus"></i><span>Add Film</span>
+              </a>
+            </div>
+          </div>
 <div class="film-container" id="film-container">
   <?php foreach( $films as $film ) : ?>
   <div class="film-card" data-title="<?= strtolower($film['name']) ?>">

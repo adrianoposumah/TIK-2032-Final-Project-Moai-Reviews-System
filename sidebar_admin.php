@@ -24,7 +24,7 @@ $users = query("SELECT * FROM users WHERE id <> $user_id");
 $categories = query("SELECT * FROM `genres` WHERE id <> '00N';");
 
 // Mengambil informasi film
-$films = query("SELECT * FROM films");
+$films = query("SELECT * FROM films ORDER BY NAME ASC");
 
 // Menentukan halaman aktif
 $current_page = basename($_SERVER['PHP_SELF']);
@@ -57,10 +57,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
       </div>
       <nav>
         <ul>
-          <li class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>"><a href="./dashboard.php">Dashboard</a></li>
-          <li class="<?php echo $current_page == 'film-management.php' ? 'active' : ''; ?>"><a href="./film-management.php">Film Management</a></li>
-          <li class="<?php echo $current_page == 'user-management.php' ? 'active' : ''; ?>"><a href="./user-management.php">User Management</a></li>
-          <li class="<?php echo $current_page == 'user-information.php' ? 'active' : ''; ?>"><a href="./user-information.php">My Account</a></li>
+          <li class="<?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>"><a href="./dashboard.php"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+          <li class="<?php echo $current_page == 'film-management.php' ? 'active' : ''; ?>"><a href="./film-management.php"><i class="fa-solid fa-film" ></i><span>Film Management</span></a></li>
+          <li class="<?php echo $current_page == 'user-management.php' ? 'active' : ''; ?>"><a href="./user-management.php"><i class="fa-solid fa-users-gear"></i><span>User Management</span></a></li>
+          <li class="<?php echo $current_page == 'user-information.php' ? 'active' : ''; ?>"><a href="./user-information.php"><i class="fa-solid fa-user"></i><span>My Account</span></a></li>
         </ul>
       </nav>
       <div class="sign-out">

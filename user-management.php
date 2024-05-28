@@ -13,12 +13,22 @@
         </header>
         <!-- Content -->
         <section>
+          <div class="header-management">
             <div class="search-box">
                 <form id="search-form">
                     <input type="text" name="search" id="srch" placeholder="Search" />
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </div>
+            <div class="filter">
+              <div class="filter-button">
+                <select name="genre" id="">
+                  <option value="">Filter</option>
+                </select>
+              </div>
+      
+            </div>
+          </div>
             <div class="user-table">
                 <table>
                     <thead>

@@ -68,7 +68,7 @@ if(isset($_GET['id'])) {
                 
                 <div class="film-synopsis">
                 <label for="synopsis">Synopsis:</label>
-                  <textarea type="text" value=""><?php echo $film[0]['synopsis']; ?></textarea>
+                  <textarea type="text" value="" ><?php echo $film[0]['synopsis']; ?></textarea>
               </div>
               </div>
             </div>
@@ -104,7 +104,9 @@ if(isset($_GET['id'])) {
                   </div>
               </div>
             </div>
-              
+            <div class="film-button">
+              <button type="submit" name="update">SAVE</button>
+            </div>
              </form>
           </div>
         </section>
@@ -139,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+    function autoResizeTextarea() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    }
 
 </script>
 

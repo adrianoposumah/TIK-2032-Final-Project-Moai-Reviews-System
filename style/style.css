@@ -241,7 +241,7 @@ section {
 
 .nav-link {
   transition: 0.7s ease;
-  border:1px solid green;
+  border: 1px solid green;
 }
 
 .hamburger {
@@ -249,30 +249,29 @@ section {
   cursor: pointer;
 }
 
-
-.dropdown-link{
+.dropdown-link {
   text-align: center;
   margin: 5px;
 }
 
-#dropdown-item{
-  margin-top:20px;
-  position:absolute;
-  display:flex;
+#dropdown-item {
+  margin-top: 20px;
+  position: absolute;
+  display: flex;
   flex-direction: column;
   right: 27%;
-  background:rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
-  display:none;
+  display: none;
   width: 13vw;
 }
 
-#dropdown-item li:hover{
-  background:rgba(0, 0, 0, 0.2)
+#dropdown-item li:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
-#dropdown-item a{
-  display:block;
+#dropdown-item a {
+  display: block;
   padding: 5px 10px;
 }
 
@@ -341,7 +340,7 @@ section {
     order: 1;
   }
   .hamburger {
-    margin-left:15px;
+    margin-left: 15px;
     display: block;
     order: 2;
   }
@@ -375,8 +374,6 @@ section {
   .nav-menu.active {
     left: 0;
   }
-
-
 }
 
 /* Category Section */
@@ -895,7 +892,7 @@ h4 {
 
 .film-detail .film-poster img {
   border-radius: 10px;
-  /* height: 80%; */
+  height: 80%;
   width: auto;
 }
 

@@ -30,7 +30,7 @@ body {
   color: var(--color-light);
   display: flex;
   height: 100vh;
-  overflow-y: hidden; /* Menghindari scroll ganda */
+  /* overflow-y: hidden; Menghindari scroll ganda */
 }
 
 .container {
@@ -45,7 +45,7 @@ body {
   border-right: 1px solid #fff;
   position: fixed;
   height: 100vh; /* Membuat sidebar sepanjang viewport */
-  overflow-y: auto; /* Memastikan sidebar bisa di-scroll jika kontennya melebihi viewport */
+  overflow-y: auto;
 }
 
 .sidebar .logo {
@@ -64,6 +64,10 @@ body {
   padding: 0;
   margin: 0;
   margin-top: 20px;
+}
+
+.sidebar nav ul li i {
+  display: none;
 }
 
 .sidebar nav ul li {
@@ -106,7 +110,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  margin-right: 20px;
 }
 
 .main-content header .nav-right {
@@ -133,33 +136,293 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .container {
+  .body {
     flex-direction: column;
+  }
+  .container {
+    /* flex-direction: column; */
+    /* height: 200vh; */
+    margin-left: 0;
+    /* justify-content: center; */
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .sidebar .logo {
+    margin: 0;
+  }
+
+  .sidebar .logo img {
+    display: none;
   }
 
   .sidebar {
-    width: 100%;
+    width: 80%;
+    /* height: 100px; */
     height: auto;
+    border: none;
+    background-color: var(--color-dark);
+    bottom: 20px;
+    padding: 0;
+    margin: 0;
+    /* overflow-y: hidden; */
+    border-radius: 10px;
+    margin-left: 8%;
   }
 
-  .main-content {
-    margin-top: 20px;
+  .sidebar nav ul li {
+    border: none;
   }
+  .sidebar nav ul {
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+  }
+  .sidebar nav ul li a span {
+    display: none;
+  }
+
+  .sidebar .sign-out {
+    padding: 0;
+  }
+
+  .sidebar .sign-out a {
+    display: none;
+  }
+
+  .sidebar nav ul li i {
+    display: flex;
+    padding: 10px;
+    background-color: var(--color-bg);
+    border-radius: 5px;
+  }
+
+  .sidebar nav ul li i:hover,
+  .sidebar nav ul .active i {
+    background-color: var(--color-primary);
+  }
+
+  header .nav-right a {
+    display: none;
+  }
+}
+
+/* Dashboard */
+.data-count-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 130px);
+  margin: 0 20px;
+  grid-gap: 35px;
+}
+
+.data-count-area .total-card {
+  border-radius: 15px;
+  background-color: var(--color-dark);
+  align-items: center;
+  display: flex;
+}
+
+.total-card-item {
+  width: 100%;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.kelasapaya {
+  display: flex;
+  justify-content: space-between;
+}
+.total-card-item h2 {
+  color: var(--color-primary);
+}
+
+.total-card-item h4 {
+  color: var(--color-secondary);
+}
+
+.total-card-item i {
+  font-size: 45px;
+}
+
+.total-text h2,
+.total-text h4 {
+  margin: 0;
+}
+
+.bargraph-genre {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  height: 300px;
+  flex-direction: column;
+}
+
+/* Bar Graph */
+.bar-graph {
+  display: flex;
+  align-items: flex-end;
+  /* height: 300px; */
+  border-left: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  padding: 10px;
+  /* margin: 50px; */
+  position: relative;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.bar span {
+  margin-top: 5px;
+}
+
+.bar-graph span {
+  position: absolute;
+  bottom: -25px; /* Adjust based on the height of the span element */
+  text-align: center;
+  width: 40px; /* Should match the width of the bar */
+}
+
+/* Color Graph Name */
+.bar div {
+  width: 30px;
+  background-color: steelblue;
+  margin-bottom: 5px;
+}
+
+.bar .bar-Action {
+  width: 30px;
+  background-color: rgb(180, 70, 70);
+  margin-bottom: 5px;
+}
+.bar .bar-Adventure {
+  width: 30px;
+  background-color: rgb(119, 255, 85);
+  margin-bottom: 5px;
+}
+.bar .bar-Anime {
+  width: 30px;
+  background-color: rgb(232, 56, 255);
+  margin-bottom: 5px;
+}
+.bar .bar-Animation {
+  width: 30px;
+  background-color: rgb(140, 0, 255);
+  margin-bottom: 5px;
+}
+.bar .bar-Biography {
+  width: 30px;
+  background-color: rgb(116, 116, 116);
+  margin-bottom: 5px;
+}
+.bar .bar-Comedy {
+  width: 30px;
+  background-color: rgb(0, 247, 255);
+  margin-bottom: 5px;
+}
+.bar .bar-Crime {
+  width: 30px;
+  background-color: rgb(241, 145, 0);
+  margin-bottom: 5px;
+}
+.bar .bar-Drama {
+  width: 30px;
+  background-color: rgb(255, 155, 155);
+  margin-bottom: 5px;
+}
+.bar .bar-Family {
+  width: 30px;
+  background-color: rgb(235, 102, 102);
+  margin-bottom: 5px;
+}
+
+.bar .bar-History {
+  width: 30px;
+  background-color: rgb(39, 40, 78);
+  margin-bottom: 5px;
+}
+.bar .bar-Horror {
+  width: 30px;
+  background-color: rgb(107, 0, 0);
+  margin-bottom: 5px;
+}
+.bar .bar-Musical {
+  width: 30px;
+  background-color: rgb(196, 185, 37);
+  margin-bottom: 5px;
+}
+.bar .bar-Mystery {
+  width: 30px;
+  background-color: rgb(9, 0, 77);
+  margin-bottom: 5px;
+}
+.bar .bar-Romance {
+  width: 30px;
+  background-color: rgb(235, 125, 125);
+  margin-bottom: 5px;
+}
+
+/* End Bar Graph */
+
+/* End Dashboard */
+
+.header-management {
+  margin: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter {
+  display: flex;
+  gap: 10px;
+}
+
+.header-management a,
+.filter-button select {
+  border-radius: 5px;
+  padding: 12px 38px;
+  background-color: var(--color-success);
+  outline: none;
+  text-decoration: none;
+  color: var(--color-light);
+  font-weight: var(--font-semibold);
+}
+
+.header-management a i {
+  display: none;
+}
+
+.filter-button select {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.filter-button option {
+  background-color: var(--color-bg);
 }
 
 .search-box {
   position: relative;
-  margin-left: 15px;
 }
 
 .search-box input {
+  border: 1px solid rgba(255, 255, 255, 0.5);
   width: 200px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding-left: 15px;
-  padding-right: 40px;
   background-color: rgba(0, 0, 0, 0);
+  padding-right: 40px;
   color: var(--color-light);
   outline: none;
 }
@@ -170,8 +433,8 @@ body {
 
 .search-box button {
   position: absolute;
-  /* top: 0;
-  right: 0; */
+  top: 0;
+  right: 0;
   width: 40px;
   height: 40px;
   border: none;
@@ -181,10 +444,35 @@ body {
 
 .search-box button i {
   color: var(--color-light);
+  /* display: none; */
+}
+
+@media (max-width: 768px) {
+  .search-box input {
+    width: 80px;
+  }
+
+  .header-management a,
+  .filter-button select {
+    border-radius: 5px;
+    padding: 12px 15px;
+    outline: none;
+    text-decoration: none;
+    color: var(--color-light);
+    font-weight: var(--font-semibold);
+  }
+
+  .header-management a span {
+    display: none;
+  }
+
+  .header-management a i {
+    display: flex;
+  }
 }
 
 .film-container {
-  padding-left: 15px;
+  padding: 0 15px;
   margin-top: 20px;
   display: grid;
   gap: 10px;
@@ -248,6 +536,57 @@ body {
   background-color: var(--color-warning);
 }
 
+@media only screen and (min-width: 1069px) {
+  .film-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1069px) {
+  .film-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 669px) {
+  .film-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .film-card {
+    width: 100px;
+  }
+
+  .film-card h4 {
+    font-size: 10px;
+  }
+  .action-btn .edit,
+  .action-btn .delete {
+    height: 15px;
+    width: 15px;
+    padding: 7px;
+    border-radius: 3px;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .user-table table {
+    font-size: 9px;
+  }
+
+  .user-table table .action-btn .edit,
+  .user-table table .action-btn .delete {
+    height: 10px;
+    width: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .film-container {
+    justify-content: space-between;
+  }
+}
+
 .user-table {
   width: 100%;
   margin-top: 20px;
@@ -256,9 +595,9 @@ body {
 }
 
 .user-table table {
-  width: 97%;
+  width: 96%;
   border-collapse: collapse;
-  margin-left: 15px;
+  margin: 0 15px;
 }
 
 .user-table th,
@@ -345,24 +684,6 @@ tbody .action-btn .delete {
   padding: 5px 10px;
 }
 
-@media only screen and (min-width: 769px) {
-  .film-container {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-@media only screen and (max-width: 769px) {
-  .film-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media only screen and (max-width: 669px) {
-  .film-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* Film Management Detail */
 
 .film-field {
@@ -410,10 +731,9 @@ tbody .action-btn .delete {
   position: relative;
 }
 
-.grid1 .film-poster img,
-.grid1 .film-banner img {
-  height: 500px;
-  width: auto;
+.poster-area .film-poster {
+  position: relative;
+  width: 100%;
 }
 
 .grid2b,
@@ -463,7 +783,8 @@ tbody .action-btn .delete {
 }
 
 .film-field textarea {
-  height: auto;
+  height: 200px;
+  resize: none;
 }
 
 .grid2,
@@ -497,6 +818,17 @@ tbody .action-btn .delete {
   margin-left: 5px;
 }
 
-.genre-option .genre-type.checked {
-  background-color: yellow;
+.film-field .film-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px; /* Atur jarak atas tombol sesuai keinginan Anda */
+}
+
+.film-field button {
+  padding: 8px 30px;
+  border-radius: 5px;
+  background-color: var(--color-success);
+  border: none;
+  color: var(--color-light);
+  font-weight: var(--font-semibold);
 }
