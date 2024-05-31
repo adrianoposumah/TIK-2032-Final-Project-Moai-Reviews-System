@@ -1,0 +1,70 @@
+:root {
+  /* COLOR Variable */
+  --color-bg: #24252a;
+  --color-light: #f3f3f3;
+  --color-dark: #383838;
+  --color-primary: #eecd3d;
+  --color-primary-hover: #cbaf31;
+  --color-secondary: #d9d9d9;
+
+  --color-success: #28a745;
+  --color-warning: #dc3545;
+  --color-danger: #ffc107;
+
+  /* FONT Variable */
+  --Font-Poppins: "Poppins", sans-serif;
+  --Font-Montserrat: "Montserrat", sans-serif;
+
+  /* FONT Weight Variable */
+  --font-reguler: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  margin: 0;
+  font-family: var(--Font-Montserrat);
+  background: var(--color-bg);
+}
+
+h1 {
+  border: none;
+}
+
+.error-container {
+  text-align: center;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.code-problem h1 {
+  font-size: 3em;
+  color: var(--color-warning);
+  margin-top: -10px;
+}
+
+.code-text {
+  font-size: 1.5em;
+  color: var(--color-light);
+  font-weight: var(--font-semibold);
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.error-container a {
+  padding: 15px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: var(--font-semibold);
+}

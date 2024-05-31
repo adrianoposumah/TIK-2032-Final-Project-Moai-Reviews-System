@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
     <div class="movie-container">
       <?php foreach($genres as $genre) : ?>
         <div class="movie-card">
-            <a href="film-detail.php?id=<?= $genre['film_id'] ?>">
+            <a href="film-detail_admin.php?id=<?= $genre['film_id'] ?>">
                 <img src="image/movie-poster/<?= $genre['poster'] ?>" alt="<?= $genre['name'] ?>" />
                 <h3><?= $genre['name'] ?></h3>
                 <p><?= $genre['release_year'] ?></p>

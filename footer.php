@@ -20,7 +20,9 @@
             <p>2024 Copyright All Rights Reserved</p>
           </div>
           <div class="about">
-            <p>About Us</p>
+            <a href="./about-us.html">
+              <p>About Us</p>
+            </a>
             <i class="fa-solid fa-chevron-up"></i>
           </div>
         </div>
