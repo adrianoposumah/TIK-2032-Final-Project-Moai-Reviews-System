@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <main class="main-content">
             <header>
-                <h1>My Account</h1>
+                <h1>User Management</h1>
                 <div class="nav-right">
                     <a href="./home_admin.php">Home</a>
                     <a href="./categories_admin.php">Categories</a>
