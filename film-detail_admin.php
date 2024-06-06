@@ -13,6 +13,9 @@ if (isset($_GET['id'])) {
         //                   JOIN users ON comments.user_id = users.id 
         //                   WHERE `film_id` = '$film_id' ORDER BY comment_date DESC");
 
+        $count_comment = query("SELECT COUNT(*) as total FROM comments WHERE `film_id` = '$film_id';");
+        $total_comment = $count_comment[0]['total'];
+        
         $recommended = query("SELECT films.*
                             FROM films
                             JOIN film_genres ON films.film_id = film_genres.film_id
@@ -159,7 +162,7 @@ if (isset($_GET['id'])) {
 <div class="film-comment">
     <h2>COMMENT</h2>
     <div class="comment-content">
-        <h5 class="total-comment">200 Comment</h5>
+        <h5 class="total-comment"><?php echo $total_comment; ?> Comment</h5>
         <div class="comment-field">
             <div class="comment-user-input">
                 <div class="user-photo">

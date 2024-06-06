@@ -8,11 +8,14 @@ if (isset($_GET['id'])) {
     if (!empty($films)) {
         $film_name = $films[0]['name'];
 
-        $comments = query("SELECT comments.*, users.photo, users.fullname 
-                          FROM comments 
-                          JOIN users ON comments.user_id = users.id 
-                          WHERE `film_id` = '$film_id' ORDER BY comment_date DESC");
+        // $comments = query("SELECT comments.*, users.photo, users.fullname 
+        //                   FROM comments 
+        //                   JOIN users ON comments.user_id = users.id 
+        //                   WHERE `film_id` = '$film_id' ORDER BY comment_date DESC");
 
+        $count_comment = query("SELECT COUNT(*) as total FROM comments WHERE `film_id` = '$film_id';");
+        $total_comment = $count_comment[0]['total'];
+        
         $recommended = query("SELECT films.*
                             FROM films
                             JOIN film_genres ON films.film_id = film_genres.film_id
@@ -27,10 +30,10 @@ if (isset($_GET['id'])) {
                             JOIN genres ON film_genres.genre_id = genres.id
                             WHERE films.film_id = '$film_id';");
 
-        $similar_films = query("SELECT film_id, name, poster, rating, release_year AS year, duration 
-                                FROM `films` 
-                                WHERE name LIKE '%$film_name%' 
-                                AND film_id != '$film_id';");
+        $similar_films = query("SELECT f.film_id, f.name, f.poster, f.rating, f.release_year AS year, f.duration
+                                  FROM films f JOIN film_tags ft1 ON f.film_id = ft1.film_id JOIN film_tags ft2 ON ft1.film_tag = ft2.film_tag
+                                  WHERE ft2.film_id = $film_id AND f.film_id != $film_id
+                                  GROUP BY f.film_id, f.name, f.poster, f.rating, f.release_year, f.duration LIMIT 7;");
 
         if (empty($similar_films)) {
             $similar_films = query("SELECT film_id, name, poster, rating, release_year AS year, duration 
@@ -45,6 +48,7 @@ if (isset($_GET['id'])) {
     header('Location: 404.html'); 
     exit;
 }
+
 ?>
 <div class="film-trailer">
     <div class="video-wrapper">
@@ -54,7 +58,7 @@ if (isset($_GET['id'])) {
 
 <section>
   <div class="carousel-container">
-    <div class="mySlides">
+    <div class="mySlides" style="display:block;">
       <div class="film-banner">
         <img src="./image/movie-banner/<?php echo $films[0]['banner']; ?>" style="width: 100%" />
       </div>
@@ -73,7 +77,7 @@ if (isset($_GET['id'])) {
             <?php echo $films[0]['name']; ?>
           </h3>
           <div class="film-prop">
-            <div class="film-rate"><?php echo $films[0]['rate']; ?></div>
+            <div class="film-rate"><?php echo $films[0]['rate'] ?? 'No Rating'; ?></div>
             <div class="film-rating"><i class="fa-solid fa-star"></i><?php echo $films[0]['rating']; ?></div>
             <div class="film-duration"><?php echo $films[0]['duration']; ?></div>
           </div>
@@ -81,9 +85,9 @@ if (isset($_GET['id'])) {
             <?php echo $films[0]['synopsis']; ?>
           </p>
            <div class="film-info">
-                <div class="film-type"><span class="label">Type:</span> <span class="content"><?php echo $films[0]['type']; ?></span></div>
-                <div class="film-country"><span class="label">Country:</span> <span class="content"><?php echo $films[0]['country']; ?></span></div>
-                <div class="film-genre">
+                <div class="film-type info-prop"><span class="label">Type:</span> <span class="content"><?php echo $films[0]['type']; ?></span></div>
+                <div class="film-country info-prop"><span class="label">Country:</span> <span class="content"><?php echo $films[0]['country']; ?></span></div>
+                <div class="film-genre info-prop">
                     <span class="label">Genre:</span> 
                     <span class="content">
                         <?php
@@ -95,13 +99,39 @@ if (isset($_GET['id'])) {
                         ?>
                     </span>
                 </div>
-                <div class="film-release"><span class="label">Release:</span> <span class="content"><?php echo $films[0]['release_date']; ?></span></div>
-                <div class="film-director"><span class="label">Director:</span> <span class="content"><?php echo $films[0]['director']; ?></span></div>
-                <div class="film-production"><span class="label">Production:</span> <span class="content"><?php echo $films[0]['production']; ?></span></div>
-                <div class="film-cast"><span class="label">Cast:</span> <span class="content"><?php echo $films[0]['cast']; ?></span></div>
-                <div class="film-status"><span class="label">Status:</span> <span class="content"><a href="" style="background-color: rgb(74, 146, 255);"><?php echo $films[0]['status']; ?></a></span></div>
-            </div>
+                <div class="film-release info-prop"><span class="label">Release:</span> <span class="content"><?php echo $films[0]['release_date']; ?></span></div>
+                <div class="film-director info-prop"><span class="label">Director:</span> <span class="content"><?php echo $films[0]['director']; ?></span></div>
+                <div class="film-production info-prop"><span class="label">Production:</span> <span class="content"><?php echo $films[0]['production']; ?></span></div>
+                <div class="film-cast info-prop"><span class="label">Cast:</span> <span class="content"><?php echo $films[0]['cast']; ?></span></div>
+                <div class="film-status info-prop">
+                  <span class="label">Status:</span>
+                  <span class="content">
+                    <a href="" id="<?php echo $films[0]['status']; ?>">Default Status</a>
+                  </span>
+                </div>
+                <!-- <h5>Give Rating to this Film!</h5> -->
+                <div class="rating-card">
+                          <div class="left">
+                            <h2>
+                              <img src="./image/smile-2.svg" />
+                            </h2>
+                            <ul class="ratings">
+                              <i class="fa-solid fa-star" id="star-1"></i>
+
+                              <i class="fa-solid fa-star" id="star-2"></i>
+
+                              <i class="fa-solid fa-star" id="star-3"></i>
+
+                              <i class="fa-solid fa-star" id="star-4"></i>
+
+                              <i class="fa-solid fa-star" id="star-5"></i>
+                            </ul>
+                            <button onclick="onSubmit()">Rate</button>
+                          </div>
+                </div>
+              </div>
         </div>
+        
       </div>
       <div class="film-related">
         <h2>Related</h2>
@@ -126,56 +156,44 @@ if (isset($_GET['id'])) {
           <?php endforeach; ?>
       </div>
     </div>
+       
+
     <div class="detail-content2">
 <div class="film-comment">
     <h2>COMMENT</h2>
     <div class="comment-content">
-        <h5 class="total-comment">200 Comment</h5>
+        <h5 class="total-comment"><?php echo $total_comment; ?> Comment</h5>
         <div class="comment-field">
             <div class="comment-user-input">
                 <div class="user-photo">
                     <img src="./image/user-picture/default.jpg" width="60px" style="border-radius: 50%;" alt="">
                 </div>
                 <div class="comment-input">
-                    <form action="">
-                        <textarea id="myTextarea" class="auto-resize" placeholder="Login to Comment..." disabled></textarea>
-                        <div class="toolbar">
+                  <form id="commentForm" class="form_data">
+                      <textarea id="myTextarea" name="comment" class="auto-resize comment-form form_data" placeholder="Add a comment..."></textarea>
+                      <input type="hidden" name="film_id" value="<?= $film_id ?>" class="form_data">
+                      <input type="hidden" name="fullname" value="<?= $user_info[0]['fullname'] ?>" class="form_data">
+                      <div class="toolbar">
                           <div class="text-tool">
-                            <button type="button" onclick="wrapText('b')" disabled><b>B</b></button>
-                            <button type="button" onclick="wrapText('i')" disabled><i>I</i></button>
-                            <button type="button" onclick="wrapText('u')" disabled><u>U</u></button>
-                            <button type="button" onclick="wrapText('s')" disabled><s>S</s></button>
-                            <button type="button" onclick="wrapText('a', 'href=&quot;#&quot;')" disabled><i class="fa-solid fa-link"></i></button>
-                            <button type="button" onclick="wrapText('spoiler')" disabled><i class="fa-solid fa-eye-slash"></i></button>
+                              <button type="button" onclick="wrapText('b')"><b>B</b></button>
+                              <button type="button" onclick="wrapText('i')"><i>I</i></button>
+                              <button type="button" onclick="wrapText('u')"><u>U</u></button>
+                              <button type="button" onclick="wrapText('s')"><s>S</s></button>
+                              <button type="button" onclick="wrapText('a', 'href=&quot;#&quot;')"><i class="fa-solid fa-link"></i></button>
+                              <button type="button" onclick="wrapText('div')"><i class="fa-solid fa-eye-slash"></i></button>
                           </div>
-                            <button type="submit" class="send-button" disabled>Comment</button>
-                        </div>
-                        
-                    </form>
-                </div>
+                          <button type="submit" id="submit-comment" name="submit" class="send-button">Comment</button>
+                      </div>
+                  </form>
+                  <?php if(isset($error_message)) : ?>
+                      <p><?= $error_message ?></p>
+                  <?php endif; ?>
+              </div>
             </div>
-             <?php foreach($comments as $comment) : ?>
-            <div class="film-user-comment">
-                <div class="user-photo">
-                    <img src="./image/user-picture/<?= $comment['photo'] ?>" width="50px" style="border-radius: 50%;" alt="">
-                </div>
-                <div class="user-comment">
-                  <div class="username-comment">
-                    <?= $comment['fullname'] ?>
-                  </div>
-                  <div class="comment-date">
-                    <?= $comment['comment_date'] ?>
-                  </div>
-                  <div class="comment">
-                    <p><?= $comment['comment'] ?></p>
-                  </div>
-                </div>
-            </div>
-            <?php endforeach; ?>
+            <?php include 'fetch_comments.php'; ?>
         </div>
     </div>
 </div>
-
 
 
       <div class="film-recommend">

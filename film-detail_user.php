@@ -13,7 +13,6 @@ if (isset($_GET['id'])) {
                           JOIN users ON comments.user_id = users.id 
                           WHERE `film_id` = '$film_id' ORDER BY comment_date DESC");
         
-        // Hitung jumlah komentar berdasarkan film_id
         $count_comment = query("SELECT COUNT(*) as total FROM comments WHERE `film_id` = '$film_id';");
         $total_comment = $count_comment[0]['total'];
 

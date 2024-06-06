@@ -69,6 +69,16 @@ a {
   text-decoration: none;
 }
 
+.digital {
+  background-color: rgb(74, 146, 255);
+}
+.comingsoon {
+  background-color: rgb(232, 248, 1);
+}
+.air {
+  background-color: rgb(51, 253, 0);
+}
+
 header {
   width: 100%;
   height: 100px;
@@ -192,9 +202,6 @@ section {
   z-index: 3001;
 }
 
-/* .navbar-logo{
-  margin: 0 10%;
-} */
 .navbar-logo img {
   cursor: pointer;
 }
@@ -226,6 +233,7 @@ section {
   font-size: 16px;
 }
 @media (max-width: 1100px) {
+  #dropdown-item,
   .navbar .nav-menu .nav-item a {
     font-size: 1.1vw;
   }
@@ -243,12 +251,44 @@ section {
 
 .nav-link {
   transition: 0.7s ease;
+  /* border: 1px solid green; */
 }
 
 .hamburger {
   display: none;
   cursor: pointer;
 }
+
+.dropdown-link {
+  text-align: center;
+  margin: 5px;
+}
+
+#dropdown-item {
+  margin-top: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 27%;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  display: none;
+  width: 13vw;
+}
+
+#dropdown-item li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#dropdown-item a {
+  display: block;
+  padding: 5px 10px;
+}
+
+/* .dashboard-nav{
+  border-top: 1px solid var(--color-light);
+  border-bottom: 1px solid var(--color-light);
+} */
 
 .bar {
   display: block;
@@ -267,11 +307,6 @@ section {
   background: var(--color-primary);
   border-radius: 8px;
 }
-/* 
-.signin a:hover{
-  background: var(--color-primary-hover);
-  background: black;
-} */
 
 .search-box {
   position: relative;
@@ -312,9 +347,12 @@ section {
 @media (max-width: 960px) {
   .search-box button {
     position: absolute;
+    order: 1;
   }
   .hamburger {
+    margin-left: 15px;
     display: block;
+    order: 2;
   }
 
   .hamburger.active .bar:nth-child(2) {
@@ -410,19 +448,16 @@ section {
   display: none;
 }
 
-.film-banner {
-  box-shadow: 1px -73px 140px -36px rgba(33, 33, 33, 0.75) inset;
-  -webkit-box-shadow: 1px -73px 140px -36px rgba(33, 33, 33, 0.75) inset;
-  -moz-box-shadow: 1px -73px 140px -36px rgba(33, 33, 33, 0.75) inset;
+.mySlides .film-banner {
+  height: 600px;
+  /* background-color: var(--color-dark); */
 }
+
 .mySlides img {
   vertical-align: middle;
-  height: auto;
-  max-height: 600px;
+  height: 100%;
+  /* max-height: 600px; */
   object-fit: cover;
-  box-shadow: 0px -102px 98px 0px rgba(255, 0, 0, 0.58) inset !important;
-  -webkit-box-shadow: 0px -102px 98px 0px rgba(255, 0, 0, 0.58) inset !important;
-  -moz-box-shadow: 0px -102px 98px 0px rgba(255, 0, 0, 0.58) inset !important;
   z-index: 10;
   position: relative;
   margin-top: -20px;
@@ -443,6 +478,8 @@ section {
   bottom: 8px;
   /* width: 100%; */
   z-index: 11;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .film-information .film-title {
@@ -814,7 +851,7 @@ h4 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
+  z-index: 50;
   width: 90%; /* Atur lebar sesuai kebutuhan Anda */
   max-width: 760px; /* Batas maksimal lebar */
 }
@@ -842,12 +879,6 @@ h4 {
   display: flex;
 }
 
-@media only screen and (max-width: 669px) {
-  .film-detail-container .detail-content1 {
-    display: grid;
-  }
-}
-
 .detail-content1,
 .detail-content2 {
   justify-content: space-between;
@@ -859,12 +890,12 @@ h4 {
   border-radius: 10px;
   width: 75%;
   height: auto;
-  max-height: 450px;
+  max-height: 800px;
 }
 
 .film-detail .film-poster img {
   border-radius: 10px;
-  /* height: 80%; */
+  height: 50%;
   width: auto;
 }
 
@@ -886,6 +917,10 @@ h4 {
   align-items: center;
   gap: 15px;
   font-size: 13px;
+}
+
+.blavla {
+  color: rgb(93, 255, 52);
 }
 
 .film-prop {
@@ -922,9 +957,15 @@ h4 {
 .film-info {
   width: 100%;
   max-width: 800px;
+
+  display: flex;
+  flex-direction: column;
+}
+.film-info > :last-child {
+  margin: 50px auto 0 auto;
 }
 
-.film-info div {
+.film-info .info-prop {
   display: flex;
   align-items: flex-start;
   margin-bottom: 5px;
@@ -938,6 +979,69 @@ h4 {
 .content {
   flex: 1;
   text-align: left;
+}
+
+.film-info .rating-card {
+  height: auto;
+  width: 80%;
+  background-color: var(--color-dark);
+  border-radius: 15px;
+  display: block;
+  padding: 30px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.left h2 img {
+  height: 80px;
+}
+
+.left .ratings {
+  justify-content: center;
+  display: flex;
+}
+
+.ratings .fa-star {
+  font-size: 3rem;
+  color: grey;
+  cursor: pointer;
+}
+
+.fa-star.active {
+  color: var(--color-primary);
+}
+
+.left button {
+  margin-top: 20px;
+  width: 40%;
+  padding: 10px;
+  background-color: #0079ff;
+  border: 1px solid #0079ff;
+  border-radius: 5px;
+  color: #fff;
+  /* font-size: 1rem; */
+  /* margin-bottom: 2rem; */
+  /* font-weight: 500; */
+  /* letter-spacing: 0.05rem; */
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.left button:hover {
+  background-color: #2192ff;
+  border: 1px solid #2192ff;
 }
 
 .detail-content1 .film-related {
@@ -954,6 +1058,12 @@ h4 {
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
+  transition: 1s ease;
+}
+
+.film-related-item:hover {
+  background-color: #eecd3d56;
+  /* font-size: 20px; */
 }
 
 .film-related-item a {
@@ -1097,4 +1207,91 @@ h4 {
 
 .user-comment .comment-date {
   font-size: 15px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .film-trailer {
+    top: 23%;
+  }
+
+  .film-detail-container .detail-content1 {
+    display: block;
+    width: 100%;
+  }
+
+  .detail-content2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-content2 .film-recommend {
+    order: 1;
+  }
+  .detail-content2 .film-comment {
+    order: 2;
+  }
+
+  .detail-content1 .film-detail,
+  .detail-content1 .film-related,
+  .detail-content2 .film-comment,
+  .detail-content2 .film-recommend {
+    width: 100%;
+    margin-bottom: 20px; /* Menambahkan jarak antara item */
+  }
+
+  .detail-content1 .film-detail {
+    max-height: none; /* Menghapus batasan tinggi maksimum */
+    flex-direction: column;
+  }
+  .film-detail .film-poster {
+    display: flex;
+    justify-content: center;
+  }
+
+  .film-detail .film-poster img {
+    height: auto;
+    width: 40%;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .film-detail .film-detail-information {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .film-detail .film-detail-information h3 {
+    text-align: center;
+  }
+
+  .film-detail-information .film-prop {
+    align-items: center;
+  }
+
+  .film-detail-synopsis,
+  .film-detail-information .film-info {
+    font-size: 12px;
+  }
+
+  .detail-content1 h2,
+  .detail-content2 h2 {
+    font-size: 20px;
+  }
+
+  .film-related-item a {
+    height: 40px;
+  }
+
+  .user-comment .username-comment {
+    font-size: 14px;
+  }
+
+  .user-comment .comment-date {
+    font-size: 10px;
+  }
+
+  .user-comment .comment {
+    font-size: 12px;
+  }
 }

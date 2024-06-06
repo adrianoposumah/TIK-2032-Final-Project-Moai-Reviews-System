@@ -717,23 +717,22 @@ tbody .action-btn .delete {
 .grid2 .film-director,
 .grid2b,
 .grid3a .film-production,
-.grid3a .film-duration,
+.grid3bc .film-duration,
 .grid3b .film-cast,
 .film-rate,
 .film-rating,
 .film-synopsis,
-.film-director {
+.film-director,
+.film-trailer,
+.film-type,
+.film-country,
+.film-status {
   display: grid;
 }
 
 .grid1 .film-poster,
 .grid1 .film-banner {
   position: relative;
-}
-
-.poster-area .film-poster {
-  position: relative;
-  width: 100%;
 }
 
 .grid2b,
@@ -765,6 +764,7 @@ tbody .action-btn .delete {
 .grid2 .film-date,
 .grid3b .grid3bc {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .film-field label {
@@ -790,6 +790,38 @@ tbody .action-btn .delete {
 .grid2,
 .grid3 {
   margin-top: 30px;
+}
+
+.grid4 {
+  display: flex;
+}
+
+.grid4 {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.grid4 .film-country,
+.grid4 .film-type,
+.grid4 .film-status {
+  width: 29%;
+}
+
+.film-country {
+  order: 1;
+}
+
+.film-type {
+  order: 2;
+}
+
+.film-status {
+  order: 3;
+}
+
+.film-trailer {
+  width: 100%;
+  order: 4;
 }
 
 .film-genre .genre-option {
@@ -825,10 +857,102 @@ tbody .action-btn .delete {
 }
 
 .film-field button {
-  padding: 8px 30px;
+  width: 300px;
+  padding: 18px 0;
   border-radius: 5px;
+  font-size: 18px;
+  font-weight: var(--font-semibold);
   background-color: var(--color-success);
   border: none;
   color: var(--color-light);
   font-weight: var(--font-semibold);
+  cursor: pointer;
+}
+
+.poster-area {
+  width: 30%;
+  /* border: 1px solid var(--color-secondary); */
+}
+
+.poster-area .film-poster {
+  width: 90%;
+  margin: auto;
+}
+
+.poster-area .film-poster img {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  height: 470px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin: auto;
+}
+
+.poster-area .film-poster p {
+  margin: 20px 0 30px 0;
+  text-align: center;
+  color: var(--color-secondary);
+}
+
+.poster-area input[type="file"] {
+  display: none;
+}
+
+.poster-area label {
+  display: block;
+  position: relative;
+  background-color: var(--color-danger);
+  color: var(--color-light);
+  font-size: 18px;
+  text-align: center;
+  width: 280px;
+  padding: 15px 0;
+  border-radius: 5px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.banner-area {
+  width: 70%;
+  /* border: 1px solid var(--color-secondary); */
+}
+
+.banner-area .film-banner {
+  width: 90%;
+  margin: auto;
+}
+
+.banner-area .film-banner img {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  height: 470px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin: auto;
+}
+
+.banner-area .film-banner p {
+  margin: 20px 0 30px 0;
+  text-align: center;
+  color: var(--color-secondary);
+}
+
+.banner-area input[type="file"] {
+  display: none;
+}
+
+.banner-area label {
+  display: block;
+  position: relative;
+  background-color: var(--color-danger);
+  color: var(--color-light);
+  font-size: 18px;
+  text-align: center;
+  width: 280px;
+  padding: 15px 0;
+  border-radius: 5px;
+  margin: auto;
+  cursor: pointer;
 }
