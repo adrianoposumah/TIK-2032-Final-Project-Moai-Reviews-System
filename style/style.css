@@ -103,96 +103,6 @@ section {
   margin: 20px 0;
 }
 
-/* .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 10%;
-}
-
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-list ul {
-  display: flex;
-}
-
-
-.search-box {
-  position: relative;
-  margin-left: 15px;
-}
-
-.search-box input {
-  width: 200px;
-  height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  padding-left: 15px;
-  padding-right: 40px;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--color-light);
-  outline: none;
-}
-
-.search-box input::placeholder {
-  color: var(--color-light);
-}
-
-.search-box button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.search-box button i {
-  color: var(--color-light);
-}
-
-.menu {
-  display: none;
-}
-
-
-
-
-
-@media (max-width: 1000px) {
-  .navbar {
-    padding: 0 5%;
-  }
-
-  .search-box button {
-    position: absolute;
-  }
-
-  .navbar-list ul {
-    position: fixed;
-    top: 100px;
-    right: -100%;
-    background: #10181e;
-    height: calc(100vh - 100px);
-    width: 50%;
-    flex-direction: column;
-    align-items: center;
-    transition: right 0.5s linear;
-  }
-
-
-
-} */
-
-/* header{
-  background-color: #262626;
-} */
 .navbar {
   min-height: 105px;
   display: flex;
@@ -265,7 +175,7 @@ section {
 }
 
 #dropdown-item {
-  margin-top: 20px;
+  margin-top: 27px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -283,6 +193,41 @@ section {
 #dropdown-item a {
   display: block;
   padding: 5px 10px;
+}
+
+#search-dropdown {
+  margin-top: 27px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  /* margin-right: 10%; */
+}
+
+#search-dropdown li {
+  border-bottom: 1px solid var(--color-secondary);
+  list-style: none;
+  width: 300px;
+}
+
+#search-dropdown a {
+  display: flex;
+}
+
+#search-dropdown img {
+  height: 110px;
+}
+
+#search-dropdown .film-info {
+  flex-direction: column;
+}
+
+#search-dropdown h3 {
+  color: var(--color-light);
+  font-weight: var(--font-medium);
+  padding: 5px;
+}
+
+#search-dropdown p {
+  margin: 0;
 }
 
 /* .dashboard-nav{
@@ -505,6 +450,9 @@ section {
 }
 
 @media only screen and (max-width: 669px) {
+  .mySlides .film-banner {
+    height: 270px;
+  }
   .film-information .film-title {
     font-size: 18px;
   }

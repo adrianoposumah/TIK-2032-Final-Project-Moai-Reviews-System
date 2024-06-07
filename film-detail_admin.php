@@ -30,10 +30,10 @@ if (isset($_GET['id'])) {
                             JOIN genres ON film_genres.genre_id = genres.id
                             WHERE films.film_id = '$film_id';");
 
-        $similar_films = query("SELECT film_id, name, poster, rating, release_year AS year, duration 
-                                FROM `films` 
-                                WHERE name LIKE '%$film_name%' 
-                                AND film_id != '$film_id';");
+        $similar_films = query("SELECT f.film_id, f.name, f.poster, f.rating, f.release_year AS year, f.duration
+                                  FROM films f JOIN film_tags ft1 ON f.film_id = ft1.film_id JOIN film_tags ft2 ON ft1.film_tag = ft2.film_tag
+                                  WHERE ft2.film_id = $film_id AND f.film_id != $film_id
+                                  GROUP BY f.film_id, f.name, f.poster, f.rating, f.release_year, f.duration LIMIT 7;");
 
         if (empty($similar_films)) {
             $similar_films = query("SELECT film_id, name, poster, rating, release_year AS year, duration 

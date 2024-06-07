@@ -59,7 +59,7 @@
             <i class="fa-solid fa-pen-to-square"></i>
           </div>
         </a>
-        <a href="">
+        <a href="film-delete.php?id=<?= $film['film_id'] ?>">
           <div class="delete">
             <i class="fa-solid fa-trash"></i>
           </div>
