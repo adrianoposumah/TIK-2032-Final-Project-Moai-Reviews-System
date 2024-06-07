@@ -11,8 +11,10 @@ if (isset($_POST['delete_user_id'])) {
         $stmt->execute();
         $stmt->close();
         echo "<script>alert('User deleted successfully');</script>";
+        header("Refresh:0");
     } else {
         echo "<script>alert('Failed to delete user');</script>";
+        header("Refresh:0");
     }
 }
 ?>
