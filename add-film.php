@@ -39,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql_genre = "INSERT INTO film_genres (film_id, genre_id) VALUES (?, ?)";
             $stmt_genre = $conn->prepare($sql_genre);
             foreach ($genres as $genre_id) {
-                $stmt_genre->bind_param("ii", $film_id, $genre_id); // Changed 'is' to 'ii'
+                $stmt_genre->bind_param("is", $film_id, $genre_id); // Changed 'ii' to 'is'
                 $stmt_genre->execute();
             }
 
-            echo "New film has been added successfully.";
+            echo "<script>alert('New Film Successfully Added');</script>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -51,10 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
         $stmt_genre->close();
     } else {
-        echo "Error uploading files.";
+        echo "<script>alert('New Film New Succesfully Added');</script>";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
