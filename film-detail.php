@@ -221,5 +221,5 @@ if (isset($_GET['id'])) {
     </div>
   </div>
 </section>
-<?php include 'footer.php'; ?>
+<?php include '../templates/footer.php'; ?>
 

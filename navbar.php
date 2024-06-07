@@ -1,6 +1,6 @@
 <?php
-require './config/connection.php';
-require './config/functions.php';
+require 'config/connection.php';
+require 'config/functions.php';
 
 session_start();
 
