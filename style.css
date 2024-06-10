@@ -781,6 +781,11 @@ h4 {
   margin-left: 10px;
 }
 
+.about a{
+  color: var(--color-light);
+  text-decoration: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-content {

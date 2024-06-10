@@ -91,6 +91,11 @@ h4 {
   align-items: center;
 }
 
+.about a{
+  color: var(--color-light);
+  text-decoration: none;
+}
+
 .about i {
   font-size: 10px;
   font-weight: bold;
