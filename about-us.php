@@ -1,3 +1,5 @@
+<?php include 'navbar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,20 +20,6 @@
     <!-- <link rel="stylesheet" href="./style/style.css" /> -->
     <link rel="stylesheet" href="./style/about-us.css?v=<?php echo time(); ?>" />
 
-    <!-- Icon -->
-    <script src="https://kit.fontawesome.com/bfff52efaa.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <div class="error-container">
-      <div class="logo">
-        <img src="./image/auth-picture/logo.png" alt="" />
-      </div>
-      <div class="code-problem">
-        <h1>Moai Film Review System Web Application</h1>
-      </div>
-      <div class="code-text">You Dont Have Permission to Access this Page!</div>
-      <a href="./login.php">back to login</a>
-    </div>
     <!-- ABOUT-US -->
     <div id="about">
         <div class="container">
@@ -70,10 +58,11 @@
                         <h2>Adriano Posumah</h2>
                         <span>Developer</span>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/@elroijohanes25/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/RaelNation" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://facebook.com/Elroi Johanes" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com/adrianoposumah" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                         </div>
+                        <a href="https://adrianoposumah.github.io/TIK2032-Project/" class="portofolio" target="_blank">See More</a>
                     </li>
                     <li class="card">
                         <div class="img">
@@ -82,10 +71,11 @@
                         <h2>Luke Mawuntu</h2>
                         <span>Developer</span>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/@elroijohanes25/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/RaelNation" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://facebook.com/Elroi Johanes" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/lukmtu/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com/lukemawuntu" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                         </div>
+                        <a href="https://lukemawuntu.github.io/" class="portofolio" target="_blank">See More</a>
                     </li>
                     <li class="card">
                         <div class="img">
@@ -94,10 +84,11 @@
                         <h2>Hizkia Polii</h2>
                         <span>Developer</span>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/@elroijohanes25/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://github.com/RaelNation" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://facebook.com/Elroi Johanes" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/hizkiapolii__/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com/HizkiaPolii" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.facebook.com/hizkia.polii.1" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                         </div>
+                        <a href="https://hizkiapolii.github.io/personalhome.github.io/" class="portofolio" target="_blank">See More</a>
                     </li>
                     <li class="card">
                         <div class="img">
@@ -106,10 +97,11 @@
                         <h2>Rangian Johanes</h2>
                         <span>Developer</span>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/@elroijohanes25/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/elroijohanes25/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                             <a href="https://github.com/RaelNation" target="_blank"><i class="fa-brands fa-github"></i></a>
                             <a href="https://facebook.com/Elroi Johanes" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                         </div>
+                        <a href="https://raelnation.github.io/TIK2032-Project/" class="portofolio" target="_blank">See More</a>
                     </li>
                 </ul>
                 <i id="right" class="fa-solid fa-angle-right"></i>
@@ -162,3 +154,5 @@
   </body>
   <script src="/script/script.js"></script>
 </html>
+
+<?php include 'footer.php'; ?>
