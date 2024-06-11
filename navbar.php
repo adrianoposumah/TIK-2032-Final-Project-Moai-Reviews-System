@@ -65,27 +65,10 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
           <span class="bar"></span>
         </div>
         <div class="search-box">
-          <form>
+          <form action="search.php" method="GET">
             <input type="text" name="search" id="srch" placeholder="Search" />
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
-        <!-- <ul id="search-dropdown">
-                <li>
-                  <a href="#">
-                    <div class="film-poster" width="100%">
-                      <img src="./image/movie-poster/agaklaen-poster.jpeg" alt="" >
-                    </div>
-                    <div class="film-info">
-                      <h3>Agak Laen</h3>
-                      <p>2022</p>
-                    </div>
-                  </a>
-                </li>
-                <li><a href="#">Film 2</a></li>
-                <li><a href="#">Film 3</a></li>
-                <li><a href="#">Film 4</a></li>
-                <li><a href="#">Film 5</a></li>
-              </ul> -->
         </div>
       </div>
     </nav>

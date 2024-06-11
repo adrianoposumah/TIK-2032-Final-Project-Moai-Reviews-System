@@ -1,4 +1,4 @@
-<?php include 'navbar_user.php'; 
+<?php include 'navbar_admin.php'; 
 
 if (isset($_GET['id'])) {
     $genre_id = $_GET['id'];
@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
 <section>
   <div class="carousel-container">
     <div class="mySlides">
-      <div class="film-banner">
+      <div class="film-banner nonslide">
         <img src="./image/default-banner.jpg" style="width: 100%; height: 200px;"/>
       </div>
     </div>

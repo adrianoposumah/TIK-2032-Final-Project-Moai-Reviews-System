@@ -81,7 +81,7 @@ $tvseries = query("SELECT * FROM films WHERE `type` = 'TV-Series'");
           <span class="bar"></span>
         </div>
         <div class="search-box">
-          <form>
+          <form action="search_user.php" method="GET">
             <input type="text" name="search" id="srch" placeholder="Search" />
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
