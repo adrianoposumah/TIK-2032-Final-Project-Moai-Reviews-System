@@ -22,13 +22,18 @@
 
     <!-- ABOUT-US -->
     <div id="about">
-        <div class="container">
-            <div class="vision">
-                <h1>
-                Experience the power of storytelling. <br> Dive into emotions, explore diverse perspectives, <br> and connect with others through the magic of cinema.
-                </h1>
-            </div>
+      <div class="container">
+        <div class="vision">
+            <h1 class="typewriter">
+            <span data-line="0">Experience the power of storytelling.</span>
+            <span data-line="1">Dive into emotions, explore diverse perspectives,</span>
+            <span data-line="2">and connect with others through the magic of cinema.</span>
+            </h1>
         </div>
+        </div>
+
+    </div>
+
     </div>
     <div id="desc">
         <div class="container">
@@ -149,6 +154,34 @@
                 })
             }
         )
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const typewriterElement = document.querySelector(".typewriter");
+        const lines = typewriterElement.querySelectorAll("span");
+        typewriterElement.innerHTML = "";
+
+        let currentLine = 0;
+        let currentChar = 0;
+
+        function typeWriter() {
+            if (currentLine < lines.length) {
+            const line = lines[currentLine].innerHTML;
+            if (currentChar < line.length) {
+                typewriterElement.innerHTML += line.charAt(currentChar);
+                currentChar++;
+                setTimeout(typeWriter, 50); // Adjust typing speed here
+            } else {
+                typewriterElement.innerHTML += "<br>";
+                currentChar = 0;
+                currentLine++;
+                setTimeout(typeWriter, 500); // Pause between lines
+            }
+            }
+        }
+
+        typeWriter();
+        });
+
     </script>
 
   </body>
