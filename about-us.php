@@ -58,7 +58,7 @@
                 <ul class ="carousel">
                     <li class="card">
                         <div class="img">
-                            <img src="image/about-us/Moai officer.jpg" alt="img" draggable = "false">
+                            <img src="image/about-us/OO280023.JPG" alt="img" draggable = "false">
                         </div>
                         <h2>Adriano Posumah</h2>
                         <span>Developer</span>
@@ -71,7 +71,7 @@
                     </li>
                     <li class="card">
                         <div class="img">
-                            <img src="image/about-us/Moai officer.jpg" alt="img" draggable = "false">
+                            <img src="image/about-us/WhatsApp Image 2024-06-12 at 10.29.43_5ee99bce.jpg" alt="img" draggable = "false">
                         </div>
                         <h2>Luke Mawuntu</h2>
                         <span>Developer</span>
@@ -84,7 +84,7 @@
                     </li>
                     <li class="card">
                         <div class="img">
-                            <img src="image/about-us/Moai officer.jpg" alt="img" draggable = "false">
+                            <img src="image/about-us/376925.jpg" alt="img" draggable = "false">
                         </div>
                         <h2>Hizkia Polii</h2>
                         <span>Developer</span>
@@ -97,7 +97,7 @@
                     </li>
                     <li class="card">
                         <div class="img">
-                            <img src="image/about-us/Moai officer.jpg" alt="img" draggable = "false">
+                            <img src="image/about-us/IMG_3718 copy.jpg" alt="img" draggable = "false">
                         </div>
                         <h2>Rangian Johanes</h2>
                         <span>Developer</span>
